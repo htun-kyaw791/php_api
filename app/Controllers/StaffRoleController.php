@@ -3,10 +3,10 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use App\Models\ApiModel;
+use App\Models\StaffRoleModel;
 use App\Helpers\ResponseHelper;
 
-class ApiController extends Controller
+class StaffRoleController extends Controller
 {
     public function getData()
     {
@@ -21,12 +21,12 @@ class ApiController extends Controller
     {
         $requestData = json_decode(file_get_contents('php://input'), true);
 
-        if (empty($requestData['name'])) {
+        if (empty($requestData['Rolename'])) {
             $response = ResponseHelper::error('Name is required', 422);
             return $this->jsonResponse($response, 422);
         }
 
-        $model = new ApiModel();
+        $model = new StaffRoleModel();
         $result = $model->saveData($requestData);
 
         $response = ResponseHelper::success($result, 'Data created successfully', 201);
@@ -40,12 +40,12 @@ class ApiController extends Controller
             $response = ResponseHelper::error('Name is required', 422);
             return $this->jsonResponse($response, 422);
         }
-        if (empty($requestData['id'])) {
-            $response = ResponseHelper::error('id is required', 422);
+        if (empty($requestData['RoleID'])) {
+            $response = ResponseHelper::error('RoleID is required', 422);
             return $this->jsonResponse($response, 422);
         }
         $model = new ApiModel();
-        $result = $model->updateData($requestData['id'], $requestData);
+        $result = $model->updateData($requestData['RoleID'], $requestData);
 
         if ($result) {
             $response = ResponseHelper::success($result, 'Data updated successfully');
@@ -58,12 +58,12 @@ class ApiController extends Controller
     public function deleteData()
     {
         $requestData = json_decode(file_get_contents('php://input'), true);
-        if (empty($requestData['id'])) {
-            $response = ResponseHelper::error('id is required', 422);
+        if (empty($requestData['RoleID'])) {
+            $response = ResponseHelper::error('RoleID is required', 422);
             return $this->jsonResponse($response, 422);
         }
         $model = new ApiModel();
-        $result = $model->deleteData($requestData['id']);
+        $result = $model->deleteData($requestData['RoleID']);
 
         if ($result) {
             $response = ResponseHelper::success(null, 'Data deleted successfully', 204);

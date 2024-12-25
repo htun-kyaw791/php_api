@@ -3,14 +3,14 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use App\Models\ApiModel;
+use App\Models\StaffModel;
 use App\Helpers\ResponseHelper;
 
-class ApiController extends Controller
+class StaffController extends Controller
 {
     public function getData()
     {
-        $model = new ApiModel();
+        $model = new StaffModel();
         $data = $model->fetchData();
 
         $response = ResponseHelper::success($data, 'Data fetched successfully');
@@ -19,14 +19,12 @@ class ApiController extends Controller
 
     public function createData()
     {
+        
         $requestData = json_decode(file_get_contents('php://input'), true);
-
-        if (empty($requestData['name'])) {
-            $response = ResponseHelper::error('Name is required', 422);
-            return $this->jsonResponse($response, 422);
-        }
-
-        $model = new ApiModel();
+        // $requestData['file']
+        // fileupload
+        // $requestData['filename']=file name
+        $model = new StaffModel();
         $result = $model->saveData($requestData);
 
         $response = ResponseHelper::success($result, 'Data created successfully', 201);
@@ -35,16 +33,11 @@ class ApiController extends Controller
     public function updateData()
     {
         $requestData = json_decode(file_get_contents('php://input'), true);
-
-        if (empty($requestData['name'])) {
-            $response = ResponseHelper::error('Name is required', 422);
-            return $this->jsonResponse($response, 422);
-        }
         if (empty($requestData['id'])) {
             $response = ResponseHelper::error('id is required', 422);
             return $this->jsonResponse($response, 422);
         }
-        $model = new ApiModel();
+        $model = new StaffModel();
         $result = $model->updateData($requestData['id'], $requestData);
 
         if ($result) {
@@ -62,7 +55,7 @@ class ApiController extends Controller
             $response = ResponseHelper::error('id is required', 422);
             return $this->jsonResponse($response, 422);
         }
-        $model = new ApiModel();
+        $model = new StaffModel();
         $result = $model->deleteData($requestData['id']);
 
         if ($result) {

@@ -23,13 +23,14 @@ class Database
             'dbname' => $_ENV['DB_NAME'],
             'username' => $_ENV['DB_USER'],
             'password' => $_ENV['DB_PASS'],
-            'socket' => $_ENV['DB_SOCKET'],
+            // 'socket' => $_ENV['DB_SOCKET'],
+            // ;unix_socket={$dbConfig['socket']}
 
         ];
 
             try {
                 self::$instance = new PDO(
-                    "mysql:host={$dbConfig['host']};port={$dbConfig['port']};dbname={$dbConfig['dbname']};unix_socket={$dbConfig['socket']}",
+                    "mysql:host={$dbConfig['host']};port={$dbConfig['port']};dbname={$dbConfig['dbname']}",
                     $dbConfig['username'],
                     $dbConfig['password']
                 );

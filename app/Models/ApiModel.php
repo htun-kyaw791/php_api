@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use PDO;
 use Core\Database;
 
 class ApiModel
@@ -28,5 +28,27 @@ class ApiModel
             'id' => $this->db->lastInsertId(),
             'name' => $data['name'],
         ];
+    }
+    public function updateData($id, $data)
+    {
+        // Example code to update data in the database
+        $stmt = $this->db->prepare("UPDATE items SET name = :name WHERE id = :id");
+        $stmt->bindParam(':name', $data['name']);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    public function deleteData($id)
+    {
+        $result = false;
+        try {
+             // Example code to delete data from the database
+            $stmt = $this->db->prepare("DELETE FROM items WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $result = $stmt->execute();
+        } catch (\Throwable $th) {
+            echo json_encode($th->getMessage());
+        }
+        return $result;
+       
     }
 }
