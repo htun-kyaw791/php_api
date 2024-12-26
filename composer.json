@@ -9,11 +9,12 @@
 
     "authors": [
         {
-            "name": "Htun Kyaw",
-            "email": "htunkyaw.791481@gmail.com"
+            "name": "Thet Ther Mon",
+            "email": "thetthetmon.magway@gmail.com"
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "firebase/php-jwt": "^6.10"
     }
 }
