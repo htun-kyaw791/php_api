@@ -35,6 +35,8 @@ class UserModel
     public function findTeacherId($id)
     {
         $sql = "SELECT id, name, email, role, created_at, updated_at FROM users WHERE id = ? AND role = 'teacher'";
+        echo $sql;
+        echo $id;
         return $this->db->selectOne($sql, [$id]);
     }
 

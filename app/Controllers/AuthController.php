@@ -34,6 +34,11 @@ class AuthController extends Controller
             return $this->jsonResponse($response, 400);
         }
 
+        if (strpos($requestData['email'], '@gmail.com') === false) {
+            $response = ResponseHelper::error('Email must be a Gmail address', 400);
+            return $this->jsonResponse($response, 400);
+        }
+
         $hashedPassword = password_hash($requestData['password'], PASSWORD_DEFAULT);
         $userData = [
             'name' => $requestData['name'],

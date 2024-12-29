@@ -14,7 +14,6 @@ $router->add('POST', '/api/auth/logout', 'AuthController@logout', [AuthMiddlewar
 
 
 
-
 // Teacher routes
 $router->add('GET', '/api/teacher', 'UserController@getTeacher', [AuthMiddleware::authenticate(function($request) { return $request; })]);
 $router->add('GET', '/api/teacher/{id}', 'UserController@getTeacherById', [AuthMiddleware::authenticate(function($request) { return $request; })]);
@@ -24,7 +23,7 @@ $router->add('POST', '/api/teacher/create', 'UserController@createTeacher', [
 ]);
 $router->add('PUT', '/api/teacher/update/{id}', 'UserController@updateTeacher', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
+    AuthMiddleware::authorize('admin','teacher')
 ]);
 $router->add('DELETE', '/api/teacher/delete/{id}', 'UserController@deleteTeacher', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
@@ -77,9 +76,126 @@ $router->add('GET', '/api/payment/{id}', 'PaymentController@getPaymentById', [
 ]);
 
 
+//payment routes
+// Student submits payment
+$router->add('POST', '/api/payment-type/create', 'PaymentTypeController@createPaymentType', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+// Admin updates payment status
+$router->add('POST', '/api/payment-type/update/{id}', 'PaymentTypeController@updatePaymentType', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('DELETE', '/api/payment-type/delete/{id}', 'PaymentTypeController@deletePaymentType', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
 
 
+// Fetch all payments (admin only)
+$router->add('GET', '/api/payment-type', 'PaymentTypeController@getPaymentType', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
 
+
+//course
+$router->add('POST', '/api/course/create', 'CourseController@createCourse', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('POST', '/api/course/update/{id}', 'CourseController@updateCourse', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('DELETE', '/api/course/delete/{id}', 'CourseController@deleteCourse', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+$router->add('GET', '/api/course', 'CourseController@getCourse', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+//subject
+$router->add('POST', '/api/subject/create', 'SubjectController@createSubject', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('POST', '/api/subject/update/{id}', 'SubjectController@updateSubject', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('DELETE', '/api/subject/delete/{id}', 'SubjectController@deleteSubject', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+$router->add('GET', '/api/subject', 'SubjectController@getSubject', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+//section
+$router->add('POST', '/api/section/create', 'SectionController@createSection', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('POST', '/api/section/update/{id}', 'SectionController@updateSection', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('DELETE', '/api/section/delete/{id}', 'SectionController@deleteSection', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+$router->add('GET', '/api/section', 'SectionController@getSection', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+//enrollment
+$router->add('POST', '/api/enrollment/create', 'EnrollmentController@createEnrollment', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('POST', '/api/enrollment/update/{id}', 'EnrollmentController@updateEnrollment', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+$router->add('DELETE', '/api/enrollment/delete/{id}', 'EnrollmentController@deleteEnrollment', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
+
+$router->add('GET', '/api/enrollment', 'EnrollmentController@getEnrollment', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
 
 
 

@@ -16,8 +16,9 @@ class PaymentModel
     public function fetchAll()
     {
         $sql = "
-            SELECT payments.*, students.nrc_id, users.name AS student_name 
+            SELECT payments.*, students.nrc_id, users.name AS student_name, payment_types.paymenttypename, payment_types.paymenttypeimage
             FROM payments
+            INNER JOIN payment_types ON payment_types.paymenttypeid = payments.payment_type_id
             INNER JOIN students ON payments.student_id = students.id
             INNER JOIN users ON students.user_id = users.id";
         return $this->db->select($sql);
@@ -26,8 +27,9 @@ class PaymentModel
     public function findById($id)
     {
         $sql = "
-            SELECT payments.*, students.nrc_id, users.name AS student_name 
+            SELECT payments.*, students.nrc_id, users.name AS student_name, payment_types.paymenttypename, payment_types.paymenttypeimage
             FROM payments
+            INNER JOIN payment_types ON payment_types.paymenttypeid = payments.payment_type_id
             INNER JOIN students ON payments.student_id = students.id
             INNER JOIN users ON students.user_id = users.id
             WHERE payments.id = ?";
@@ -42,9 +44,10 @@ class PaymentModel
 
     public function create($data)
     {
+        
         $sql = "
-            INSERT INTO payments (student_id, section_id, amount, evidence_image, status) 
-            VALUES (:student_id, :section_id, :amount, :evidence_image, :status)";
+            INSERT INTO payments (payment_type_id,student_id, section_id, amount, evidence_image, status) 
+            VALUES (:payment_type_id, :student_id, :section_id, :amount, :evidence_image, :status)";
         return $this->db->insert($sql, $data);
     }
 
@@ -52,7 +55,8 @@ class PaymentModel
     {
         $sql = "
             UPDATE payments 
-            SET student_id = :student_id, 
+            SET payment_type_id = :payment_type_id,
+                student_id = :student_id, 
                 section_id = :section_id, 
                 amount = :amount, 
                 evidence_image = :evidence_image, 

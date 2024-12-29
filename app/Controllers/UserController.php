@@ -77,13 +77,17 @@ class UserController extends Controller
 
     public function updateTeacher($request)
     {
+        if($request['user']['role'] =='teacher' && $request['user']['id'] != $request['params'][0]  )
+        {
+            $response = ResponseHelper::error('Permission Denied', 403);
+            return $this->jsonResponse($response, 403);
+        }
         //check if user exist and user is teacher
         $user = $this->userModel->findTeacherId($request['params'][0]);
-        if(!$user || $user->role !== 'teacher'){
+        if(!$user || $user['role'] !== 'teacher'){
             $response = ResponseHelper::error('Teacher not found', 403);
             return $this->jsonResponse($response, 403);
         }
-
 
         $requestData = json_decode(file_get_contents('php://input'), true);
 
@@ -112,10 +116,6 @@ class UserController extends Controller
                 'role' => 'teacher'
             ];
         }
-
-
-        
-
         $result = $this->userModel->update($request['params'][0],$userData);
 
         if ($result) {
@@ -130,7 +130,7 @@ class UserController extends Controller
     public function deleteTeacher($request)
     {
         $user = $this->userModel->findTeacherId($request['params'][0]);
-        //check if user exist and user is teacher
+        // check if user exist and user is teacher
         if(!$user || $user->role !== 'teacher'){
             $response = ResponseHelper::error('Teacher not found', 403);
             return $this->jsonResponse($response, 403);
@@ -159,7 +159,6 @@ class UserController extends Controller
     public function getStudentById($request)
     {
         $data = $this->studentModel->findById($request['params'][0]);
-
         if($data){
             $response = ResponseHelper::success($data, 'Data fetched successfully');
             return $this->jsonResponse($response);
