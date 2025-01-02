@@ -3,13 +3,6 @@
 namespace App\Models;
 
 use Core\Database;
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class EnrollmentModel extends CI_Model {
-    public function saveEnrollment($data) {
-        return $this->db->insert('enrollments', $data);
-    }
-}
 class EnrollmentModel
 {
     private $db;
@@ -22,8 +15,8 @@ class EnrollmentModel
     public function fetchAll()
     {
         $sql = "
-            SELECT enrollments.*, users.id AS student_id, users.name AS student_name,
-            sections.id AS section_id, sections.name AS section_name
+            SELECT enrollments.*, users.name AS student_name,
+            sections.name AS section_name
             FROM enrollments
             INNER JOIN sections ON sections.id = enrollments.section_id            
             INNER JOIN students ON students.id= enrollments.student_id
@@ -34,8 +27,8 @@ class EnrollmentModel
     public function findById($id)
     {
         $sql = "
-            SELECT enrollments.*, users.id AS student_id, users.name AS student_name,
-            sections.id AS section_id, sections.name AS section_name
+            SELECT enrollments.*, users.name AS student_name,
+             sections.name AS section_name
             FROM enrollments
             INNER JOIN sections ON sections.id = enrollments.section_id            
             INNER JOIN students ON students.id= enrollments.student_id
@@ -53,8 +46,8 @@ class EnrollmentModel
     public function create($data)
     {        
         $sql = "
-            INSERT INTO enrollments (student_id, section_id, amount, payment_id) 
-            VALUES (:student_id, :section_id, :amount, :payment_id)";
+            INSERT INTO enrollments (student_id, section_id, amount) 
+            VALUES (:student_id, :section_id, :amount)";
         return $this->db->insert($sql, $data);
     }
 

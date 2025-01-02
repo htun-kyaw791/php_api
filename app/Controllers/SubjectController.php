@@ -89,19 +89,6 @@ class SubjectController extends Controller
         $response = ResponseHelper::success($subjects, 'Data fetched successfully');
         return $this->jsonResponse($response);
     }
-
-    // public function getPaymentById($request)
-    // {
-    //     $payment = $this->courseController->findById($request['params'][0]);
-
-    //     if ($payment) {
-    //         $response = ResponseHelper::success($payment, 'Data fetched successfully');
-    //     } else {
-    //         $response = ResponseHelper::error('Payment not found', 403);
-    //     }
-
-    //     return $this->jsonResponse($response);
-    // }
     public function deleteSubject($request)
     {
         $result = $this->subjectModel->delete($request['params'][0]);

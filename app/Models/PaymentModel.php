@@ -36,18 +36,27 @@ class PaymentModel
         return $this->db->selectOne($sql, [$id]);
     }
 
-    public function findByStudentId($studentId)
+
+    public function findByStudentId($student_id)
     {
+        // $sql = "
+        //     SELECT payments.*, students.nrc_id, users.name AS student_name, payment_types.paymenttypename, payment_types.paymenttypeimage
+        //     FROM payments
+        //     INNER JOIN payment_types ON payment_types.paymenttypeid = payments.payment_type_id
+        //     INNER JOIN students ON payments.student_id = students.id
+        //     INNER JOIN users ON students.user_id = users.id
+        //     WHERE payments.student_id= ?";
+        // return $this->db->selectOne($sql, [$id]);
         $sql = "SELECT * FROM payments WHERE student_id = ?";
-        return $this->db->select($sql, [$studentId]);
+        return $this->db->select($sql, [$student_id]);
     }
 
     public function create($data)
     {
         
         $sql = "
-            INSERT INTO payments (payment_type_id,student_id, section_id, amount, evidence_image, status) 
-            VALUES (:payment_type_id, :student_id, :section_id, :amount, :evidence_image, :status)";
+            INSERT INTO payments (payment_type_id,student_id, enrollment_id, amount, evidence_image, status) 
+            VALUES (:payment_type_id, :student_id, :enrollment_id, :amount, :evidence_image, :status)";
         return $this->db->insert($sql, $data);
     }
 

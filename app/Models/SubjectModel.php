@@ -44,12 +44,11 @@ class SubjectModel
         return $this->db->selectOne($sql, [$name]);
     }
 
-    // public function findByTeacherId($Teacher)
+    // public function findBySubjectId($course_id)
     // {
-    //     $sql = "SELECT * FROM courses WHERE teacher_id = ?";
-    //     return $this->db->select($sql, [$studentId]);
+    //     $sql = "SELECT * FROM subjects WHERE course_id = ?";
+    //     return $this->db->select($sql, [$course_id]);
     // }
-
     public function create($data)
     {
         

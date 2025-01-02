@@ -1,14 +1,8 @@
 <?php
 
 namespace App\Models;
+use PDO;
 use Core\Database;
-defined('BASEPATH') OR exit('No direct script access allowed');
-class SectionModel extends CI_Model {
-    public function getSectionById($section_id) {
-        $query = $this->db->get_where('sections', ['id' => $section_id]);
-        return $query->row_array();
-    }
-}
 class SectionModel
 {
     private $db;
@@ -26,9 +20,6 @@ class SectionModel
             INNER JOIN courses ON sections.course_ids = courses.id";
         return $this->db->select($sql);
     }
-    // SELECT courses.*, users.id, users.name AS teacher_name
-    // FROM courses
-    // INNER JOIN users ON courses.teacher_id = users.id
     public function findById($id)
     {
         $sql = "
@@ -45,13 +36,6 @@ class SectionModel
         echo json_encode($sql);
         return $this->db->selectOne($sql, [$name]);
     }
-
-    // public function findByTeacherId($Teacher)
-    // {
-    //     $sql = "SELECT * FROM courses WHERE teacher_id = ?";
-    //     return $this->db->select($sql, [$studentId]);
-    // }
-
     public function create($data)
     {
         

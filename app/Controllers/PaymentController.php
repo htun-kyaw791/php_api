@@ -20,7 +20,7 @@ class PaymentController extends Controller
     {
 
         $requestData = $_POST;
-        echo $requestData;
+        echo json_encode($requestData);
         if (empty($requestData['payment_type_id']) || empty($requestData['student_id']) || empty($requestData['enrollment_id']) || empty($requestData['amount'])) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
@@ -87,6 +87,21 @@ class PaymentController extends Controller
             $response = ResponseHelper::success($payment, 'Data fetched successfully');
         } else {
             $response = ResponseHelper::error('Payment not found', 403);
+        }
+
+        return $this->jsonResponse($response);
+    }
+    public function getStudentById($request)
+    {
+        echo "I am here";
+        $student = $this->paymentModel->findByStudentId($request['params'][0]);
+        echo json_encode($request['params'][0]);
+
+        echo  json_encode($student);
+        if ($student) {
+            $response = ResponseHelper::success($student, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Student not found', 403);
         }
 
         return $this->jsonResponse($response);

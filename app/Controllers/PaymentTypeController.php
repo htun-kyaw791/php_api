@@ -34,7 +34,6 @@ class PaymentTypeController extends Controller
             }
             $requestData['paymenttypeimage'] = $uploadedFile;
         } else {
-            echo "I am here";
             $response = ResponseHelper::error('Payment type image is required', 400);
             return $this->jsonResponse($response, 400);
         }
@@ -59,7 +58,11 @@ class PaymentTypeController extends Controller
                 $response = ResponseHelper::error('Failed to upload image', 500);
                 return $this->jsonResponse($response, 500);
             }
-            $requestData['image'] = $uploadedFile;
+                $oldPaymentType = $this->paymentTypeModel->findPaymentTypeId($request['params'][0]);
+                echo ('uploads/paymentType/'.$oldPaymentType['paymenttypeimage']);
+                FileHelper::deleteFile('uploads/paymentType/'.$oldPaymentType['paymenttypeimage']);
+                $requestData['image'] = $uploadedFile;
+
         } 
         $paymentTypeData = [
             'paymenttypename' => $requestData['paymenttypename'],
@@ -84,14 +87,14 @@ class PaymentTypeController extends Controller
         return $this->jsonResponse($response);
     }
 
-    public function getPaymentById($request)
+    public function getPaymentTypeById($request)
     {
-        $payment = $this->paymentTypeModel->findById($request['params'][0]);
+        $payment = $this->paymentTypeModel->findPaymentTypeId($request['params'][0]);
 
         if ($payment) {
             $response = ResponseHelper::success($payment, 'Data fetched successfully');
         } else {
-            $response = ResponseHelper::error('Payment not found', 403);
+            $response = ResponseHelper::error('Payment type not found', 403);
         }
 
         return $this->jsonResponse($response);

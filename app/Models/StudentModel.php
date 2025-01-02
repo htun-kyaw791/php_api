@@ -57,6 +57,32 @@ class StudentModel
         return $this->db->selectOne($sql, [$id]);
     }
 
+    public function findByUserId($id)
+    {
+        $sql = "
+            SELECT 
+                students.id AS student_id, 
+                students.nrc_id, 
+                students.date_of_birth, 
+                students.gender, 
+                students.phone_number, 
+                students.address, 
+                students.guardian_name, 
+                students.guardian_contact, 
+                students.user_id, 
+                students.created_at, 
+                students.updated_at,
+                students.user_id AS user_id, 
+                users.name, 
+                users.email, 
+                users.role
+            FROM students
+            INNER JOIN users ON students.user_id = users.id
+            WHERE students.user_id = ?";
+            
+        return $this->db->selectOne($sql, [$id]);
+    }
+
     public function fetchAll()
     {
         $sql = "

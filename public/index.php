@@ -31,8 +31,6 @@ $router->add('DELETE', '/api/teacher/delete/{id}', 'UserController@deleteTeacher
 ]);
 
 
-
-
 //Student routes
 $router->add('GET', '/api/student', 'UserController@getStudent', [AuthMiddleware::authenticate(function($request) { return $request; })]);
 $router->add('GET', '/api/student/{stu_id}', 'UserController@getStudentById', [AuthMiddleware::authenticate(function($request) { return $request; })]);
@@ -74,9 +72,13 @@ $router->add('GET', '/api/payment/{id}', 'PaymentController@getPaymentById', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin', 'student')
 ]);
+$router->add('GET', '/api/payment/{student_id}', 'PaymentController@getStudentById', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
 
 
-//payment routes
+//payment_type routes
 // Student submits payment
 $router->add('POST', '/api/payment-type/create', 'PaymentTypeController@createPaymentType', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
@@ -101,6 +103,11 @@ $router->add('GET', '/api/payment-type', 'PaymentTypeController@getPaymentType',
     AuthMiddleware::authorize('admin')
 ]);
 
+// Fetch all payments (admin only)
+$router->add('GET', '/api/payment-type/{id}', 'PaymentTypeController@getPaymentTypeById', [
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
 
 //course
 $router->add('POST', '/api/course/create', 'CourseController@createCourse', [
@@ -142,13 +149,18 @@ $router->add('DELETE', '/api/subject/delete/{id}', 'SubjectController@deleteSubj
     AuthMiddleware::authorize('admin')
 ]);
 
-
 $router->add('GET', '/api/subject', 'SubjectController@getSubject', 
 [
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin')
 ]);
 
+$router->add('GET', '/api/subject/{id}', 'SubjectController@findBySubjectId', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+// getSubjectById
 
 //section
 $router->add('POST', '/api/section/create', 'SectionController@createSection', [
@@ -177,7 +189,7 @@ $router->add('GET', '/api/section', 'SectionController@getSection',
 //enrollment
 $router->add('POST', '/api/enrollment/create', 'EnrollmentController@createEnrollment', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
+    AuthMiddleware::authorize('student')
 ]);
 
 $router->add('POST', '/api/enrollment/update/{id}', 'EnrollmentController@updateEnrollment', [
@@ -194,11 +206,21 @@ $router->add('DELETE', '/api/enrollment/delete/{id}', 'EnrollmentController@dele
 $router->add('GET', '/api/enrollment', 'EnrollmentController@getEnrollment', 
 [
     AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
+    AuthMiddleware::authorize('admin', 'student')
 ]);
 
 
+// Allow from all origins
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Access-Control-Allow-Credentials: true");
 
+// Handle preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 // Dispatch the route
 $router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

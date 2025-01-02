@@ -97,7 +97,10 @@ class AuthController extends Controller
             $response = ResponseHelper::error('Invalid credentials', 401);
             return $this->jsonResponse($response, 401);
         }
-
+        if($user['role'] == 'student')
+        {
+            $student = $this->studentModel->findByUserId($user['id']);
+        }
         $token = $this->generateToken($user['id']);
         $this->userModel->createAccessToken($user['id'], $token);
 
@@ -106,8 +109,10 @@ class AuthController extends Controller
                 'id' => $user['id'],
                 'name' => $user['name'],
                 'email' => $user['email'],
-                'role' => $user['role']
+                'role' => $user['role'],
+                // 'student_id' => $user['student_id'],
             ],
+            'student'=> $student ?? null,
             'token' => $token
         ], 'Login successful');
 
