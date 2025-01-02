@@ -28,16 +28,24 @@ class PaymentTypeModel
 
     public function update($id, $data)
     {
-        echo $id;
-        echo json_encode($data);
-        $sql = "
-            UPDATE payment_types 
-            SET paymenttypename =        :paymenttypename, 
-                paymenttypeimage = :paymenttypeimage,  
-                updated_at = CURRENT_TIMESTAMP 
-            WHERE  paymenttypeid = :id";
-        $data['id'] = $id;
-        return $this->db->update($sql, $data);
+        $sql = "UPDATE payment_types SET ";
+        $fields = [];
+        $params = [];
+
+        if (!empty($data['paymenttypename'])) {
+            $fields[] = "paymenttypename = :paymenttypename";
+            $params['paymenttypename'] = $data['paymenttypename'];
+        }
+        if (!empty($data['paymenttypeimage'])) {
+            $fields[] = "paymenttypeimage = :paymenttypeimage";
+            $params['paymenttypeimage'] = $data['paymenttypeimage'];
+        }
+
+        $fields[] = "updated_at = CURRENT_TIMESTAMP";
+        $sql .= implode(", ", $fields) . " WHERE paymenttypeid = :id";
+        $params['id'] = $id;
+
+        return $this->db->update($sql, $params);
     }
 
     public function findPaymentTypeId($id)

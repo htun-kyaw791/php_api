@@ -59,7 +59,7 @@ class PaymentTypeController extends Controller
                 return $this->jsonResponse($response, 500);
             }
                 $oldPaymentType = $this->paymentTypeModel->findPaymentTypeId($request['params'][0]);
-                echo ('uploads/paymentType/'.$oldPaymentType['paymenttypeimage']);
+                // echo ('uploads/paymentType/'.$oldPaymentType['paymenttypeimage']);
                 FileHelper::deleteFile('uploads/paymentType/'.$oldPaymentType['paymenttypeimage']);
                 $requestData['image'] = $uploadedFile;
 
