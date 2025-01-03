@@ -33,7 +33,6 @@ class SectionModel
     public function findByName($name)
     {
         $sql = "SELECT * FROM sections WHERE name = ?";
-        echo json_encode($sql);
         return $this->db->selectOne($sql, [$name]);
     }
     public function create($data)

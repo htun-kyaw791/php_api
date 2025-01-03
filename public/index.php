@@ -132,6 +132,12 @@ $router->add('GET', '/api/course', 'CourseController@getCourse',
     AuthMiddleware::authorize('admin')
 ]);
 
+$router->add('GET', '/api/course/{id}', 'CourseController@getCourseById', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
 
 //subject
 $router->add('POST', '/api/subject/create', 'SubjectController@createSubject', [
@@ -155,7 +161,7 @@ $router->add('GET', '/api/subject', 'SubjectController@getSubject',
     AuthMiddleware::authorize('admin')
 ]);
 
-$router->add('GET', '/api/subject/{id}', 'SubjectController@findBySubjectId', 
+$router->add('GET', '/api/subject/{id}', 'SubjectController@getSubjectById', 
 [
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin')
@@ -184,6 +190,13 @@ $router->add('GET', '/api/section', 'SectionController@getSection',
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin')
 ]);
+
+$router->add('GET', '/api/section/{id}', 'SectionController@getSectionById', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin')
+]);
+
 
 
 //enrollment

@@ -64,12 +64,6 @@ class CourseController extends Controller
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
-        $existingName = $this->courseModel->findByName($requestData['name']);
-        // echo json_encode($existingName);
-        if ($existingName) {
-            $response = ResponseHelper::error('Name Already Exist', 400);
-            return $this->jsonResponse($response, 400);
-        }
         else{
             $courseData = [
                 'name' => $requestData['name'],
@@ -91,28 +85,24 @@ class CourseController extends Controller
     public function getCourse()
     {
         $courses = $this->courseModel->fetchAll();
-        echo json_encode($courses);
         $response = ResponseHelper::success($courses, 'Data fetched successfully');
         return $this->jsonResponse($response);
     }
 
-    // public function getPaymentById($request)
-    // {
-    //     $payment = $this->courseController->findById($request['params'][0]);
+    public function getCourseById($request)
+    {
+        $course = $this->courseModel->findById($request['params'][0]);
+        if ($course) {
+            $response = ResponseHelper::success($course, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Course not found', 403);
+        }
 
-    //     if ($payment) {
-    //         $response = ResponseHelper::success($payment, 'Data fetched successfully');
-    //     } else {
-    //         $response = ResponseHelper::error('Payment not found', 403);
-    //     }
-
-    //     return $this->jsonResponse($response);
-    // }
+        return $this->jsonResponse($response);
+    }
     public function deleteCourse($request)
     {
-        echo ($request);       
         $result = $this->courseModel->delete($request['params'][0]);
-        echo json_encode($result);
         if ($result) {
             $response = ResponseHelper::success(null, 'Data deleted successfully', 204);
         } else {

@@ -65,7 +65,6 @@ class SectionController extends Controller
             return $this->jsonResponse($response, 400);
         }
         $existingName = $this->sectionModel->findByName($requestData['name']);
-        // echo json_encode($existingName);
         if ($existingName) {
             $response = ResponseHelper::error('Name Already Exist', 400);
             return $this->jsonResponse($response, 400);
@@ -93,8 +92,20 @@ class SectionController extends Controller
     public function getSection()
     {
         $section = $this->sectionModel->fetchAll();
-        echo json_encode($section);
         $response = ResponseHelper::success($section, 'Data fetched successfully');
+        return $this->jsonResponse($response);
+    }
+
+    public function getSectionById($request)
+    {
+        $section = $this->sectionModel->findById($request['params'][0]);
+
+        if ($section) {
+            $response = ResponseHelper::success($section, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Payment not found', 403);
+        }
+
         return $this->jsonResponse($response);
     }
     public function deleteSection($request)

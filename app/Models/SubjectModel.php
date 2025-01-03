@@ -40,7 +40,6 @@ class SubjectModel
     public function findByName($name)
     {
         $sql = "SELECT * FROM subjects WHERE name = ?";
-        echo json_encode($sql);
         return $this->db->selectOne($sql, [$name]);
     }
 
@@ -58,16 +57,36 @@ class SubjectModel
         return $this->db->insert($sql, $data);
     }
 
+    // public function update($id, $data)
+    // {
+    //     $sql = "
+    //         UPDATE subjects 
+    //         SET id = :id,
+    //             name = :name, 
+    //             course_id = :course_id
+    //         WHERE id = :id";
+    //     $data['id'] = $id;
+    //     return $this->db->update($sql, $data);
+    // }
     public function update($id, $data)
     {
-        $sql = "
-            UPDATE subjects 
-            SET id = :id,
-                name = :name, 
-                course_id = :course_id
-            WHERE id = :id";
-        $data['id'] = $id;
-        return $this->db->update($sql, $data);
+        $sql = "UPDATE subjects SET ";
+        $fields = [];
+        $params = [];
+
+        if (!empty($data['name'])) {
+            $fields[] = "name = :name";
+            $params['name'] = $data['name'];
+        }
+        if (!empty($data['course_id'])) {
+            $fields[] = "course_id = :course_id";
+            $params['course_id'] = $data['course_id'];
+        }
+
+        $sql .= implode(", ", $fields) . " WHERE id = :id";
+        $params['id'] = $id;
+
+        return $this->db->update($sql, $params);
     }
 
     // public function updateStatus($id, $status)

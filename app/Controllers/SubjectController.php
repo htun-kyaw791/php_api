@@ -29,11 +29,11 @@ class SubjectController extends Controller
             return $this->jsonResponse($response, 400);
         }
 
-        $courseData = [
+        $subjectData = [
             'name' => $requestData['name'],
             'course_id' => $requestData['course_id']
         ];
-        $result = $this->SubjectModel->create($courseData);
+        $result = $this->subjectModel->create($subjectData);
         $response = ResponseHelper::success($result, 'Data created successfully', 201);
         return $this->jsonResponse($response, 201);
     }
@@ -66,12 +66,12 @@ class SubjectController extends Controller
             return $this->jsonResponse($response, 400);
         }
         else{
-            $courseData = [
+            $subjectData = [
                 'name' => $requestData['name'],
                 'course_id' => $requestData['course_id']
             ];
         }
-        $result = $this->subjectModel->update($request['params'][0],$courseData);
+        $result = $this->subjectModel->update($request['params'][0],$subjectData);
 
         if ($result) {
             $response = ResponseHelper::success($result, 'Data updated successfully');
@@ -87,6 +87,17 @@ class SubjectController extends Controller
     {
         $subjects = $this->subjectModel->fetchAll();
         $response = ResponseHelper::success($subjects, 'Data fetched successfully');
+        return $this->jsonResponse($response);
+    }
+    public function getSubjectById($request)
+    {
+        $subject = $this->subjectModel->findById($request['params'][0]);
+        if ($subject) {
+            $response = ResponseHelper::success($subject, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Course not found', 403);
+        }
+
         return $this->jsonResponse($response);
     }
     public function deleteSubject($request)

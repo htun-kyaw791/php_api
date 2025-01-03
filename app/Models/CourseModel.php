@@ -16,7 +16,7 @@ class CourseModel
     public function fetchAll()
     {
         $sql = "
-            SELECT courses.*, users.id, users.name AS teacher_name
+            SELECT courses.*, users.id AS teacher_id, users.name AS teacher_name
             FROM courses
             INNER JOIN users ON courses.teacher_id = users.id";
         return $this->db->select($sql);
@@ -27,7 +27,7 @@ class CourseModel
     public function findById($id)
     {
         $sql = "
-           SELECT courses.*, users.id, users.name AS teacher_name
+           SELECT courses.*, users.id AS teacher_id, users.name AS teacher_name
             FROM courses
             INNER JOIN users ON courses.teacher_id = users.id
             WHERE courses.id = ?";
@@ -37,7 +37,6 @@ class CourseModel
     public function findByName($name)
     {
         $sql = "SELECT * FROM courses WHERE name = ?";
-        echo json_encode($sql);
         return $this->db->selectOne($sql, [$name]);
     }
 
