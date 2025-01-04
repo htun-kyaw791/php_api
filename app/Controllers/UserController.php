@@ -77,12 +77,12 @@ class UserController extends Controller
 
     public function updateTeacher($request)
     {
-        if($request['user']['role'] =='teacher' && $request['user']['id'] != $request['params'][0]  )
-        {
-            $response = ResponseHelper::error('Permission Denied', 403);
-            return $this->jsonResponse($response, 403);
-        }
-        //check if user exist and user is teacher
+        // if($request['user']['role'] =='teacher' && $request['user']['id'] != $request['params'][0]  )
+        // {
+        //     $response = ResponseHelper::error('Permission Denied', 403);
+        //     return $this->jsonResponse($response, 403);
+        // }
+        // check if user exist and user is teacher
         $user = $this->userModel->findTeacherId($request['params'][0]);
         if(!$user || $user['role'] !== 'teacher'){
             $response = ResponseHelper::error('Teacher not found', 403);
@@ -131,7 +131,7 @@ class UserController extends Controller
     {
         $user = $this->userModel->findTeacherId($request['params'][0]);
         // check if user exist and user is teacher
-        if(!$user || $user->role !== 'teacher'){
+        if(!$user || $user->role == 'teacher'){
             $response = ResponseHelper::error('Teacher not found', 403);
             return $this->jsonResponse($response, 403);
         }
