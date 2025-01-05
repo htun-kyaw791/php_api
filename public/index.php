@@ -215,13 +215,17 @@ $router->add('DELETE', '/api/enrollment/delete/{id}', 'EnrollmentController@dele
     AuthMiddleware::authorize('admin')
 ]);
 
-
 $router->add('GET', '/api/enrollment', 'EnrollmentController@getEnrollment', 
 [
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin', 'student')
 ]);
 
+$router->add('GET', '/api/enrollment/{id}', 'EnrollmentController@getEnrollment', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin', 'student')
+]);
 
 // Allow from all origins
 header("Access-Control-Allow-Origin: *");

@@ -16,8 +16,6 @@ class EnrollmentController extends Controller {
     public function createEnrollment()
     {
         $requestData = json_decode(file_get_contents('php://input'), true);
-
-        // echo json_encode($requestData);
         if (empty($requestData['student_id']) || empty($requestData['section_id']) || empty($requestData['amount']) ) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
@@ -39,14 +37,12 @@ class EnrollmentController extends Controller {
             $response = ResponseHelper::error('Permission Denied', 403);
             return $this->jsonResponse($response, 403);
         }
-
         $Enrollment = $this->enrollmentModel->findById($request['params'][0]);
         if (!$Enrollment) 
         {
-            $response = ResponseHelper::error('Course not found', 403);
+            $response = ResponseHelper::error('enrollment not found', 403);
             return $this->jsonResponse($response, 403);
         }
-
         $requestData = json_decode(file_get_contents('php://input'), true);
         if (empty($requestData['student_id']) && empty($requestData['section_id']) && empty($requestData['amount']) ) 
         {
@@ -56,9 +52,9 @@ class EnrollmentController extends Controller {
         else
         {
             $enrollmentData = [
-                'student_id' => $requestData['name'],
-                'section_id' => $requestData['start_date'],
-                'amount' => $requestData['end_date']                
+                'student_id' => $requestData['student_id'],
+                'section_id' => $requestData['section_id'],
+                'amount' => $requestData['amount']                
             ];
         }
         $result = $this->enrollmentModel->update($request['params'][0],$enrollmentData);
