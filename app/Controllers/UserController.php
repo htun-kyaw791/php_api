@@ -58,6 +58,7 @@ class UserController extends Controller
             $response = ResponseHelper::error('User Email Already Exist', 400);
             return $this->jsonResponse($response, 400);
         }
+        
 
         $hashedPassword = password_hash($requestData['password'], PASSWORD_DEFAULT);
 
@@ -177,15 +178,11 @@ class UserController extends Controller
             $response = ResponseHelper::error('Student not found', 403);
             return $this->jsonResponse($response, 403);
         }
-
         $requestData = json_decode(file_get_contents('php://input'), true);
-
-
         if (empty($requestData['name']) || empty($requestData['email']) || empty($requestData['nrc_id']) || empty($requestData['date_of_birth']) || empty($requestData['gender']) || empty($requestData['phone_number']) || empty($requestData['address']) || empty($requestData['guardian_name']) || empty($requestData['guardian_contact']) ) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
-
         $existingUser = $this->userModel->findByEmail($requestData['email']);
         if ($existingUser && $existingUser['id'] != $student['user_id']) {
             $response = ResponseHelper::error('User Email Already Exist', 400);

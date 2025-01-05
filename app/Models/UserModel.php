@@ -49,6 +49,7 @@ class UserModel
         $sql = "SELECT * FROM users WHERE email = ?";
         return $this->db->selectOne($sql, [$email]);
     }
+    
 
     public function update($id, $userData)
     {
