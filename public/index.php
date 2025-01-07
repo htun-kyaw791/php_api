@@ -98,10 +98,11 @@ $router->add('DELETE', '/api/payment-type/delete/{id}', 'PaymentTypeController@d
 
 
 // Fetch all payments (admin only)
-$router->add('GET', '/api/payment-type', 'PaymentTypeController@getPaymentType', [
-    AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
-]);
+$router->add('GET', '/api/payment-type', 'PaymentTypeController@getPaymentType');
+// , [
+//     AuthMiddleware::authenticate(function($request) { return $request; }),
+//     AuthMiddleware::authorize('admin')
+// ]
 
 // Fetch all payments (admin only)
 $router->add('GET', '/api/payment-type/{id}', 'PaymentTypeController@getPaymentTypeById', [
@@ -132,11 +133,12 @@ $router->add('GET', '/api/course', 'CourseController@getCourse',
     AuthMiddleware::authorize('admin')
 ]);
 
-$router->add('GET', '/api/course/{id}', 'CourseController@getCourseById', 
-[
-    AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize()
-]);
+$router->add('GET', '/api/course/{id}', 'CourseController@getCourseById');
+// , 
+// [
+//     AuthMiddleware::authenticate(function($request) { return $request; }),
+//     AuthMiddleware::authorize()
+// ]
 // 'admin'
 
 $router->add('GET', '/api/course-subject/{id}', 'CourseController@getTeacherByID', 

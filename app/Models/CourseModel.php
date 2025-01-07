@@ -16,9 +16,11 @@ class CourseModel
     public function fetchAll()
     {
         $sql = "
-            SELECT courses.*, users.id AS teacher_id, users.name AS teacher_name,
+            SELECT courses.*, sections.cost,users.id AS teacher_id, 
+            users.name AS teacher_name,
             subjects.name As subject_name
             FROM courses
+            INNER JOIN sections ON sections.course_ids = courses.id
             INNER JOIN users ON courses.teacher_id = users.id
             INNER JOIN subjects ON subjects.course_id = courses.id";
         return $this->db->select($sql);
@@ -29,9 +31,11 @@ class CourseModel
     public function findById($id)
     {
         $sql = "
-           SELECT courses.*, users.id AS teacher_id, users.name AS teacher_name,
+           SELECT courses.*, sections.cost,users.id AS teacher_id, 
+            users.name AS teacher_name,
             subjects.name As subject_name
             FROM courses
+            INNER JOIN sections ON sections.course_ids = courses.id
             INNER JOIN users ON courses.teacher_id = users.id
             INNER JOIN subjects ON subjects.course_id = courses.id
             WHERE courses.id = ?";
