@@ -17,10 +17,23 @@ class CourseController extends Controller
     }
     public function createCourse()
     {
-        $requestData = json_decode(file_get_contents('php://input'), true);
-        // echo json_encode($requestData);
+        $requestData = $_POST;
+        
         if (empty($requestData['name']) || empty($requestData['description']) || empty($requestData['teacher_id']) ) {
             $response = ResponseHelper::error('Missing required fields', 400);
+            return $this->jsonResponse($response, 400);
+        }
+
+        $file = $_FILES['image'] ?? null;
+        if ($file) {
+            $uploadedFile = FileHelper::uploadFile($file, 'uploads/course/');
+            if (!$uploadedFile) {
+                $response = ResponseHelper::error('Failed to upload image', 500);
+                return $this->jsonResponse($response, 500);
+            }
+            $requestData['image'] = $uploadedFile;
+        } else {
+            $response = ResponseHelper::error('Evidence image is required', 400);
             return $this->jsonResponse($response, 400);
         }
 
@@ -33,6 +46,7 @@ class CourseController extends Controller
 
         $courseData = [
             'name' => $requestData['name'],
+            'image' => $requestData['image'],
             'description' => $requestData['description'],
             'teacher_id' => $requestData['teacher_id']
         ];
@@ -43,6 +57,7 @@ class CourseController extends Controller
 
     public function updateCourse($request)
     {
+        $requestData = $_POST;
         // not allow teachers to update data
         if($request['user']['role'] =='teacher' && $request['user']['id'] != $request['params'][0]  )
         {
@@ -56,17 +71,32 @@ class CourseController extends Controller
             $response = ResponseHelper::error('Course not found', 403);
             return $this->jsonResponse($response, 403);
         }
+        $file = $_FILES['image'] ?? null;
+        if ($file) {
+            $uploadedFile = FileHelper::uploadFile($file, 'uploads/course/');
+            if (!$uploadedFile) {
+                $response = ResponseHelper::error('Failed to upload image', 500);
+                return $this->jsonResponse($response, 500);
+            }
+                $oldCourse = $this->courseModel->findById($request['params'][0]);
+                // echo ('uploads/course/'.$oldCourse['image']);
+                FileHelper::deleteFile('uploads/course/'.$oldCourse['image']);
+                $requestData['image'] = $uploadedFile;
 
-        $requestData = json_decode(file_get_contents('php://input'), true);
+        } 
         if (empty($requestData['name']) && empty($requestData['description']) && empty($requestData['teacher_id']) ) 
         // in_array($requestData['status'], ['pending', 'confirmed', 'rejected'])
         {
+            echo json_encode($requestData['name']);
+            echo json_encode($requestData['description']);
+            echo json_encode($requestData['teacher_id']);
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
         else{
             $courseData = [
                 'name' => $requestData['name'],
+                'image' => $requestData['image'],
                 'description' => $requestData['description'],
                 'teacher_id' => $requestData['teacher_id']
             ];
@@ -100,6 +130,18 @@ class CourseController extends Controller
 
         return $this->jsonResponse($response);
     }
+    public function getTeacherByID($request)
+    {
+        $teacher = $this->courseModel->findByTeacherId($request['params'][0]);
+        if ($teacher) {
+            $response = ResponseHelper::success($teacher, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Teacher not found', 403);
+        }
+
+        return $this->jsonResponse($response);
+    }
+    
     public function deleteCourse($request)
     {
         $result = $this->courseModel->delete($request['params'][0]);

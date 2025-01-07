@@ -16,6 +16,7 @@ class SectionModel
     {
         $sql = "
             SELECT sections.*, courses.id AS course_id, courses.name AS course_name
+            , courses.image AS course_image
             FROM sections
             INNER JOIN courses ON sections.course_ids = courses.id";
         return $this->db->select($sql);

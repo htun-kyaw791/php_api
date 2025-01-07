@@ -41,7 +41,6 @@ class UserController extends Controller
             $response = ResponseHelper::error('Teacher not found', 403);
             return $this->jsonResponse($response, 403);
         }
-        
     }
 
     public function createTeacher()

@@ -44,7 +44,7 @@ class PaymentTypeController extends Controller
 
     public function updatePaymentType($request)
     {
-        $requestData = $_POST;       
+        $requestData = $_POST;
         if (empty($requestData['paymenttypename']) ) 
         {
             $response = ResponseHelper::error('Missing required fields', 400);

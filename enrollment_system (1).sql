@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2025 at 08:13 PM
+-- Generation Time: Jan 07, 2025 at 02:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -196,7 +196,20 @@ INSERT INTO `access_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at
 (157, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYwOTUzOTksImV4cCI6MTczNjE4MTc5OSwidXNlcklkIjoxfQ.48S_FsQQIDZYA7RPRR5SP3YEMLgoUhv84PBTWg4x2Xo', '2025-01-05 16:43:19', '0000-00-00 00:00:00'),
 (158, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMDMzMjAsImV4cCI6MTczNjE4OTcyMCwidXNlcklkIjoxN30.GYuYcY6kFxjIiLqP4bXvoG60UXnulMXIn9bbY777yhE', '2025-01-05 18:55:20', '0000-00-00 00:00:00'),
 (159, 32, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMDQwMTksImV4cCI6MTczNjE5MDQxOSwidXNlcklkIjoiMzIifQ.3175g4TORHCCUrMcoGS1Zl7Ug6BoceiX_yhV5RgzzqI', '2025-01-05 19:06:59', '0000-00-00 00:00:00'),
-(160, 32, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMDQwNjEsImV4cCI6MTczNjE5MDQ2MSwidXNlcklkIjozMn0.2SMsHJvHagN-Vl9xK8s2dy7oLOUArBp4oKPbkB8uPhQ', '2025-01-05 19:07:41', '0000-00-00 00:00:00');
+(160, 32, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMDQwNjEsImV4cCI6MTczNjE5MDQ2MSwidXNlcklkIjozMn0.2SMsHJvHagN-Vl9xK8s2dy7oLOUArBp4oKPbkB8uPhQ', '2025-01-05 19:07:41', '0000-00-00 00:00:00'),
+(161, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMjc5NzksImV4cCI6MTczNjIxNDM3OSwidXNlcklkIjoxfQ.7k02WGV9Sfe3EKRmIOU1a8oRW2ug4hr24qcOwpFncwo', '2025-01-06 01:46:19', '0000-00-00 00:00:00'),
+(162, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMjgwMTIsImV4cCI6MTczNjIxNDQxMiwidXNlcklkIjoxfQ.Mi4Z0BMCaN93qiBdhjJgaQaEES6PHhdKAs5lQq-Bd74', '2025-01-06 01:46:52', '0000-00-00 00:00:00'),
+(163, 8, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMjgxMDAsImV4cCI6MTczNjIxNDUwMCwidXNlcklkIjo4fQ.R5lFwkiZyELkIrgA11EnihyZaSvs7fbwZL1NILMMuoE', '2025-01-06 01:48:20', '0000-00-00 00:00:00'),
+(164, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMjgyOTksImV4cCI6MTczNjIxNDY5OSwidXNlcklkIjoxfQ.eJoM7q86bbM7FSx1ZAo2LaQpwBcAMKz3vwZLEntBDo0', '2025-01-06 01:51:39', '0000-00-00 00:00:00'),
+(165, 8, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMzE3NDEsImV4cCI6MTczNjIxODE0MSwidXNlcklkIjo4fQ.x_spdLs-0HYMtOD1AUiEG9_5as9Tk1NWkT68XUi_NzQ', '2025-01-06 02:49:01', '0000-00-00 00:00:00'),
+(166, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMzIyNzUsImV4cCI6MTczNjIxODY3NSwidXNlcklkIjoxfQ.J8N_nyGJCPGOhNz3sJJagxk1z7Xtd21-KeUy3x2BQIk', '2025-01-06 02:57:55', '0000-00-00 00:00:00'),
+(167, 8, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMzMzNzAsImV4cCI6MTczNjIxOTc3MCwidXNlcklkIjo4fQ.mzOX_44iRjrgMZioeIYZ3ieFCn33vRLakAZO1sBw4sc', '2025-01-06 03:16:10', '0000-00-00 00:00:00'),
+(168, 8, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMzQ0MzgsImV4cCI6MTczNjIyMDgzOCwidXNlcklkIjo4fQ.rruuyP7IdIPynntNmkx5uSL1eyhSSx6NioTelaD0dy8', '2025-01-06 03:33:58', '0000-00-00 00:00:00'),
+(169, 24, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxMzYzNTAsImV4cCI6MTczNjIyMjc1MCwidXNlcklkIjoyNH0.lzPAafs1_n1Mg6EnIe0vUO13mK7Uc5aC75INmi-AYe8', '2025-01-06 04:05:50', '0000-00-00 00:00:00'),
+(170, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNjk4MzcsImV4cCI6MTczNjI1NjIzNywidXNlcklkIjoxfQ.sA-RjwFFoRsA2dF2d-Ll0zl8fI4rwTeELOi-5vSeFpQ', '2025-01-06 13:23:57', '0000-00-00 00:00:00'),
+(171, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNzIyMDcsImV4cCI6MTczNjI1ODYwNywidXNlcklkIjoxfQ.rcDgqC9_rrFZQJdza0IfSLvKaRZp98LvI2f-1_3rk6k', '2025-01-06 14:03:27', '0000-00-00 00:00:00'),
+(172, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNzk4NjUsImV4cCI6MTczNjI2NjI2NSwidXNlcklkIjoxfQ.vRs5JBdGabXdAwz-R70eCN4BTcgXsAh-RVxYtdNbDpY', '2025-01-06 16:11:05', '0000-00-00 00:00:00'),
+(173, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxOTI2MzgsImV4cCI6MTczNjI3OTAzOCwidXNlcklkIjoxfQ.3nspQ35pJaPA3dWweoDPDISwrSSwR7T3DdMv2Ay3sF0', '2025-01-06 19:43:58', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -207,6 +220,7 @@ INSERT INTO `access_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   `teacher_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -217,11 +231,14 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`id`, `name`, `description`, `teacher_id`, `created_at`, `updated_at`) VALUES
-(2, 'Special Web Design (SWD) Dec 2024', 'Master the art of creating visually stunning, responsive websites with a focus on user experience (UX) and user interface (UI) design. Learn modern web design principles, accessibility, SEO optimization, and trending techniques to build websites that are both functional and aesthetically pleasing across all devices.', 10, '2024-12-29 05:26:40', '2025-01-05 16:46:33'),
-(3, 'Professional UI/UX Design (PUD) Jann 2025', 'Master advanced UI/UX principles, creating intuitive, user-centered designs. Learn to prototype, conduct user research, and apply modern design tools to build visually appealing, functional, and responsive user interfaces.\n\n', 8, '2025-01-02 16:04:11', '2025-01-05 15:54:25'),
-(5, 'Basic UI/UX Design (BUD) Feb 2025', 'Learn the fundamentals of UI/UX design, focusing on user-centered design, wireframing, and prototyping. Understand key principles to create simple, effective interfaces that enhance user experience and usability.', 24, '2025-01-02 16:37:34', '2025-01-05 15:54:59'),
-(8, 'Digital Marketing Strategies	', 'Learn advanced techniques in SEO, SEM, social media marketing, and content strategy for successful campaigns.	', 24, '2025-01-05 15:45:30', '2025-01-05 15:45:30');
+INSERT INTO `courses` (`id`, `name`, `image`, `description`, `teacher_id`, `created_at`, `updated_at`) VALUES
+(2, 'Special Web Design (SWD) Dec 2024', 'image_677c00aae0c96.jpg', 'Master the art of creating visually stunning, responsive websites with a focus on user experience (UX) and user interface (UI) design. Learn modern web design principles, accessibility, SEO optimization, and trending techniques to build websites that are both functional and aesthetically pleasing across all devices.', 10, '2024-12-29 05:26:40', '2025-01-06 16:11:22'),
+(3, 'Premium UI Design (PUD) Jann 2025', 'image_677c00c5ec8ee.jpg', 'Master advanced UI/UX principles, creating intuitive, user-centered designs. Learn to prototype, conduct user research, and apply modern design tools to build visually appealing, functional, and responsive user interfaces.\r\n\r\n', 8, '2025-01-02 16:04:11', '2025-01-06 16:11:49'),
+(5, 'Basic UI/UX Design (BUD) Feb 2025', 'image_677c00d281a7f.jpg', 'Learn the fundamentals of UI/UX design, focusing on user-centered design, wireframing, and prototyping. Understand key principles to create simple, effective interfaces that enhance user experience and usability.', 24, '2025-01-02 16:37:34', '2025-01-06 16:12:02'),
+(8, 'Digital Marketing Strategies	', 'image_677c018861be2.jpg', 'Learn advanced techniques in SEO, SEM, social media marketing, and content strategy for successful campaigns.	', 24, '2025-01-05 15:45:30', '2025-01-06 16:15:04'),
+(12, 'Laravel', 'image_677c01eeb5487.jpg', 'Laravel is a robust PHP framework designed for web development, featuring elegant syntax, MVC architecture, built-in tools, and scalability, enabling efficient coding, seamless routing, database management, and advanced functionality for developers.alidation again', 30, '2025-01-06 14:11:23', '2025-01-06 16:16:46'),
+(13, 'Three.js', 'image_677c036c4e9bf.jpg', 'Three.js is a JavaScript library for creating 3D graphics in web browsers. It simplifies working with WebGL, allowing developers to build interactive 3D scenes, animations, and visualizations efficiently.', 10, '2025-01-06 14:35:13', '2025-01-06 16:23:08'),
+(14, 'WAD', 'image_677c0419b069c.jpg', 'WAD (Web Application Development) builds browser-based applications using technologies like HTML, CSS, and JavaScript.', 15, '2025-01-06 16:26:01', '2025-01-06 16:29:51');
 
 -- --------------------------------------------------------
 
@@ -321,7 +338,10 @@ INSERT INTO `sections` (`id`, `name`, `start_date`, `end_date`, `cost`, `course_
 (17, 'PUD Batch 1', '2023-12-21', '2025-05-21', 350000.00, '3', '2025-01-03 05:42:35', '2025-01-05 17:49:05'),
 (23, 'DMS Batch 1', '2025-01-09', '2025-03-09', 85000.00, '8', '2025-01-03 14:22:37', '2025-01-05 17:50:01'),
 (24, 'SWD Batch 2', '2024-12-29', '2025-06-29', 450000.00, '3', '2025-01-03 14:24:52', '2025-01-05 17:51:05'),
-(25, 'SWD Batch 1', '2024-12-08', '2025-06-08', 450000.00, '2', '2025-01-05 17:18:23', '2025-01-05 17:51:15');
+(25, 'SWD Batch 1', '2024-12-08', '2025-06-08', 450000.00, '2', '2025-01-05 17:18:23', '2025-01-05 17:51:15'),
+(26, 'WAD Batch 1', '2025-01-02', '2025-04-06', 250000.00, '14', '2025-01-06 16:30:25', '2025-01-06 16:30:25'),
+(27, 'WAD Batch 2', '2025-01-09', '2025-06-06', 85000.00, '12', '2025-01-06 16:32:13', '2025-01-06 16:32:13'),
+(28, 'SWD Batch 3', '2025-01-08', '2025-02-08', 0.00, '13', '2025-01-06 16:33:22', '2025-01-06 16:33:22');
 
 -- --------------------------------------------------------
 
@@ -474,13 +494,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `access_tokens`
 --
 ALTER TABLE `access_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `enrollments`
@@ -504,7 +524,7 @@ ALTER TABLE `payment_types`
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `students`

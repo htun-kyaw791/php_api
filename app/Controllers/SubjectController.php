@@ -95,7 +95,18 @@ class SubjectController extends Controller
         if ($subject) {
             $response = ResponseHelper::success($subject, 'Data fetched successfully');
         } else {
-            $response = ResponseHelper::error('Course not found', 403);
+            $response = ResponseHelper::error('Subject not found', 403);
+        }
+
+        return $this->jsonResponse($response);
+    }
+    public function getTeacherByID($request)
+    {
+        $subject = $this->subjectModel->findByTeacherId($request['params'][0]);
+        if ($subject) {
+            $response = ResponseHelper::success($subject, 'Data fetched successfully');
+        } else {
+            $response = ResponseHelper::error('Subject not found', 403);
         }
 
         return $this->jsonResponse($response);

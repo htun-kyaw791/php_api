@@ -135,10 +135,16 @@ $router->add('GET', '/api/course', 'CourseController@getCourse',
 $router->add('GET', '/api/course/{id}', 'CourseController@getCourseById', 
 [
     AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
+    AuthMiddleware::authorize()
 ]);
+// 'admin'
 
-
+$router->add('GET', '/api/course-subject/{id}', 'CourseController@getTeacherByID', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin','teacher')
+]);
+// getTeacherByID
 //subject
 $router->add('POST', '/api/subject/create', 'SubjectController@createSubject', [
     AuthMiddleware::authenticate(function($request) { return $request; }),
@@ -166,7 +172,13 @@ $router->add('GET', '/api/subject/{id}', 'SubjectController@getSubjectById',
     AuthMiddleware::authenticate(function($request) { return $request; }),
     AuthMiddleware::authorize('admin')
 ]);
-// getSubjectById
+$router->add('GET', '/api/subject-teacher/{id}', 'SubjectController@getTeacherByID', 
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('admin', 'teacher')
+]);
+
+// getTeacherByID
 
 //section
 $router->add('POST', '/api/section/create', 'SectionController@createSection', [
@@ -185,11 +197,12 @@ $router->add('DELETE', '/api/section/delete/{id}', 'SectionController@deleteSect
 ]);
 
 
-$router->add('GET', '/api/section', 'SectionController@getSection', 
-[
-    AuthMiddleware::authenticate(function($request) { return $request; }),
-    AuthMiddleware::authorize('admin')
-]);
+$router->add('GET', '/api/section', 'SectionController@getSection');
+// , 
+// [
+//     AuthMiddleware::authenticate(function($request) { return $request; }),
+//     AuthMiddleware::authorize('admin')
+// ]);
 
 $router->add('GET', '/api/section/{id}', 'SectionController@getSectionById', 
 [

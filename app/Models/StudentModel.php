@@ -100,7 +100,7 @@ class StudentModel
                 students.updated_at,
                 students.user_id AS user_id, 
                 users.name, 
-                users.email, 
+                users.email,
                 users.role
             FROM students
             INNER JOIN users ON students.user_id = users.id";

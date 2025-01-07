@@ -20,7 +20,6 @@ class PaymentController extends Controller
     {
 
         $requestData = $_POST;
-        echo json_encode($requestData);
         if (empty($requestData['payment_type_id']) || empty($requestData['student_id']) || empty($requestData['enrollment_id']) || empty($requestData['amount'])) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
