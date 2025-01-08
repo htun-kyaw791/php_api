@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 07, 2025 at 02:33 AM
+-- Host: localhost
+-- Generation Time: Jan 08, 2025 at 03:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -209,7 +209,38 @@ INSERT INTO `access_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at
 (170, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNjk4MzcsImV4cCI6MTczNjI1NjIzNywidXNlcklkIjoxfQ.sA-RjwFFoRsA2dF2d-Ll0zl8fI4rwTeELOi-5vSeFpQ', '2025-01-06 13:23:57', '0000-00-00 00:00:00'),
 (171, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNzIyMDcsImV4cCI6MTczNjI1ODYwNywidXNlcklkIjoxfQ.rcDgqC9_rrFZQJdza0IfSLvKaRZp98LvI2f-1_3rk6k', '2025-01-06 14:03:27', '0000-00-00 00:00:00'),
 (172, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxNzk4NjUsImV4cCI6MTczNjI2NjI2NSwidXNlcklkIjoxfQ.vRs5JBdGabXdAwz-R70eCN4BTcgXsAh-RVxYtdNbDpY', '2025-01-06 16:11:05', '0000-00-00 00:00:00'),
-(173, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxOTI2MzgsImV4cCI6MTczNjI3OTAzOCwidXNlcklkIjoxfQ.3nspQ35pJaPA3dWweoDPDISwrSSwR7T3DdMv2Ay3sF0', '2025-01-06 19:43:58', '0000-00-00 00:00:00');
+(173, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYxOTI2MzgsImV4cCI6MTczNjI3OTAzOCwidXNlcklkIjoxfQ.3nspQ35pJaPA3dWweoDPDISwrSSwR7T3DdMv2Ay3sF0', '2025-01-06 19:43:58', '0000-00-00 00:00:00'),
+(174, 29, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYyMzQzMjQsImV4cCI6MTczNjMyMDcyNCwidXNlcklkIjoyOX0.9MiuEe_7Vk72BEdAod1Vt7LEW0ANPFKfQ50xUNQKeb4', '2025-01-07 07:18:44', '0000-00-00 00:00:00'),
+(175, 7, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYyMzQzOTQsImV4cCI6MTczNjMyMDc5NCwidXNlcklkIjo3fQ.4EvSc05v08WaxW6hhG68JfHGjeJkpHbGEmiKRlb6Vp4', '2025-01-07 07:19:54', '0000-00-00 00:00:00'),
+(176, 33, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMTMzMTcsImV4cCI6MTczNjM5OTcxNywidXNlcklkIjoiMzMifQ.V2ZuNUHnkfkJOZcaepXYnl89hcFqfRJjhZKyx08dyiw', '2025-01-08 05:15:17', '0000-00-00 00:00:00'),
+(177, 33, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMjQ0NzksImV4cCI6MTczNjQxMDg3OSwidXNlcklkIjozM30.oVX9XGlNpUhql2x_YnsqTdcNfEY2-qFjvknzs8afJi8', '2025-01-08 08:21:19', '0000-00-00 00:00:00'),
+(178, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMjg0NDUsImV4cCI6MTczNjQxNDg0NSwidXNlcklkIjoxfQ.wIiNxz1EoT1etKCZrwRQwGZTsNU_LUa-wWBrcWWbybI', '2025-01-08 09:27:25', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chapters`
+--
+
+CREATE TABLE `chapters` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `link` text NOT NULL,
+  `course_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `chapters`
+--
+
+INSERT INTO `chapters` (`id`, `name`, `link`, `course_id`) VALUES
+(2, 'SEO Fundamentals, Social Media Marketing, Content Marketing, Paid Media Advertising, Email Marketing Techniques, Google Analytics, Branding Management, Influencer Marketing Strategies', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 2),
+(3, 'Advanced UI/UX Principles, User Research, Prototyping & Wireframing, Interaction Design, Visual Design Techniques, Design Systems, Usability Testing, Design Tools (Figma, XD)', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 3),
+(4, 'UI/UX Introduction, Design Principles, Wireframing Basics, Color Theory, Usability Design, Accessibility Basics, Mobile Design Fundamentals, Intro to Design Tools', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 5),
+(7, 'SEO Fundamentals, Social Media Strategy, Content Marketing, PPC Advertising, Email Marketing, Google Analytics, Branding Strategy, Influencer Marketing', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 8),
+(9, 'HTML', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 13),
+(10, 'test edit', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 8),
+(11, 'Chapter 1', 'https://www.youtube.com/watch?v=lkIFF4maKMU', 13);
 
 -- --------------------------------------------------------
 
@@ -238,7 +269,8 @@ INSERT INTO `courses` (`id`, `name`, `image`, `description`, `teacher_id`, `crea
 (8, 'Digital Marketing Strategies	', 'image_677c018861be2.jpg', 'Learn advanced techniques in SEO, SEM, social media marketing, and content strategy for successful campaigns.	', 24, '2025-01-05 15:45:30', '2025-01-06 16:15:04'),
 (12, 'Laravel', 'image_677c01eeb5487.jpg', 'Laravel is a robust PHP framework designed for web development, featuring elegant syntax, MVC architecture, built-in tools, and scalability, enabling efficient coding, seamless routing, database management, and advanced functionality for developers.alidation again', 30, '2025-01-06 14:11:23', '2025-01-06 16:16:46'),
 (13, 'Three.js', 'image_677c036c4e9bf.jpg', 'Three.js is a JavaScript library for creating 3D graphics in web browsers. It simplifies working with WebGL, allowing developers to build interactive 3D scenes, animations, and visualizations efficiently.', 10, '2025-01-06 14:35:13', '2025-01-06 16:23:08'),
-(14, 'WAD', 'image_677c0419b069c.jpg', 'WAD (Web Application Development) builds browser-based applications using technologies like HTML, CSS, and JavaScript.', 15, '2025-01-06 16:26:01', '2025-01-06 16:29:51');
+(14, 'WAD', 'image_677c0419b069c.jpg', 'WAD (Web Application Development) builds browser-based applications using technologies like HTML, CSS, and JavaScript.', 15, '2025-01-06 16:26:01', '2025-01-06 16:29:51'),
+(16, 'test edit', 'image_677d562115d35.png', 'ttt edit', 24, '2025-01-07 15:33:58', '2025-01-07 16:28:17');
 
 -- --------------------------------------------------------
 
@@ -251,6 +283,7 @@ CREATE TABLE `enrollments` (
   `student_id` int(11) NOT NULL,
   `section_id` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
+  `status` varchar(225) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -259,9 +292,9 @@ CREATE TABLE `enrollments` (
 -- Dumping data for table `enrollments`
 --
 
-INSERT INTO `enrollments` (`id`, `student_id`, `section_id`, `amount`, `created_at`, `updated_at`) VALUES
-(5, 7, 1, 50000, '2025-01-04 09:05:19', '2025-01-05 18:46:27'),
-(9, 5, 17, 350000, '2025-01-05 06:20:00', '2025-01-05 18:49:20');
+INSERT INTO `enrollments` (`id`, `student_id`, `section_id`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(1, 17, 31, 6445, 'pending', '2025-01-08 09:25:49', '2025-01-08 09:25:49'),
+(2, 17, 17, 350000, 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54');
 
 -- --------------------------------------------------------
 
@@ -286,8 +319,8 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `enrollment_id`, `payment_type_id`, `student_id`, `amount`, `evidence_image`, `status`, `created_at`, `updated_at`) VALUES
-(5, 9, 9, 5, 250000.00, 'image_677a3af901c2e.jpg', 'confirmed', '2025-01-05 07:55:37', '2025-01-05 18:36:28'),
-(6, 9, 9, 5, 550000.00, 'image_677a3e55aa5a9.jpg', 'pending', '2025-01-05 08:09:57', '2025-01-05 08:09:57');
+(1, 1, 9, 17, 6445.00, 'image_677e449d8e6a5.png', 'pending', '2025-01-08 09:25:49', '2025-01-08 09:25:49'),
+(2, 2, 10, 17, 350000.00, 'image_677e44de3b7f4.png', 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54');
 
 -- --------------------------------------------------------
 
@@ -334,14 +367,18 @@ CREATE TABLE `sections` (
 --
 
 INSERT INTO `sections` (`id`, `name`, `start_date`, `end_date`, `cost`, `course_ids`, `created_at`, `updated_at`) VALUES
-(1, 'BUD Batch 1', '2024-12-10', '2025-06-10', 50000.00, '5', '2024-12-29 13:09:22', '2025-01-05 17:48:11'),
-(17, 'PUD Batch 1', '2023-12-21', '2025-05-21', 350000.00, '3', '2025-01-03 05:42:35', '2025-01-05 17:49:05'),
-(23, 'DMS Batch 1', '2025-01-09', '2025-03-09', 85000.00, '8', '2025-01-03 14:22:37', '2025-01-05 17:50:01'),
-(24, 'SWD Batch 2', '2024-12-29', '2025-06-29', 450000.00, '3', '2025-01-03 14:24:52', '2025-01-05 17:51:05'),
-(25, 'SWD Batch 1', '2024-12-08', '2025-06-08', 450000.00, '2', '2025-01-05 17:18:23', '2025-01-05 17:51:15'),
-(26, 'WAD Batch 1', '2025-01-02', '2025-04-06', 250000.00, '14', '2025-01-06 16:30:25', '2025-01-06 16:30:25'),
-(27, 'WAD Batch 2', '2025-01-09', '2025-06-06', 85000.00, '12', '2025-01-06 16:32:13', '2025-01-06 16:32:13'),
-(28, 'SWD Batch 3', '2025-01-08', '2025-02-08', 0.00, '13', '2025-01-06 16:33:22', '2025-01-06 16:33:22');
+(1, 'BUD Batch 1', '2024-12-10', '2025-06-10', 50000.00, '[5,3]', '2024-12-29 13:09:22', '2025-01-07 09:49:12'),
+(17, 'PUD Batch 1', '2023-12-21', '2025-05-21', 350000.00, '[3,8]', '2025-01-03 05:42:35', '2025-01-07 09:49:26'),
+(23, 'DMS Batch 1', '2025-01-09', '2025-03-09', 85000.00, '[8]', '2025-01-03 14:22:37', '2025-01-07 09:49:30'),
+(24, 'SWD Batch 2', '2024-12-29', '2025-06-29', 450000.00, '[3,13]', '2025-01-03 14:24:52', '2025-01-07 09:49:37'),
+(25, 'SWD Batch 1 edit 2', '2024-12-21', '2025-06-28', 450001.00, '[3,5]', '2025-01-05 17:18:23', '2025-01-07 15:24:23'),
+(26, 'WAD Batch 1', '2025-01-02', '2025-04-06', 250000.00, '[14,8]', '2025-01-06 16:30:25', '2025-01-07 09:49:54'),
+(27, 'WAD Batch 2', '2025-01-09', '2025-06-06', 85000.00, '[12,2]', '2025-01-06 16:32:13', '2025-01-07 09:50:03'),
+(28, 'SWD Batch 3', '2025-01-08', '2025-02-08', 0.00, '[13]', '2025-01-06 16:33:22', '2025-01-07 09:50:09'),
+(29, 'test', '2025-01-03', '2025-01-04', 242.00, '[3]', '2025-01-07 10:11:45', '2025-01-07 10:11:45'),
+(30, 'test77', '2025-01-01', '2025-01-16', 9000.00, '[]', '2025-01-07 15:00:13', '2025-01-07 15:00:13'),
+(31, 'test 55', '2025-01-25', '2025-01-09', 6445.00, '[2,5]', '2025-01-07 15:00:57', '2025-01-07 15:00:57'),
+(32, 'test sd', '2025-01-09', '2025-01-25', 900.00, '[2,8]', '2025-01-07 15:02:42', '2025-01-07 15:02:42');
 
 -- --------------------------------------------------------
 
@@ -370,29 +407,8 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`id`, `nrc_id`, `date_of_birth`, `gender`, `phone_number`, `address`, `guardian_name`, `guardian_contact`, `user_id`, `created_at`, `updated_at`) VALUES
 (5, '7/MATHANA(N)000622', '2000-02-19', 'male', '09986732457', 'Mandalay', 'kyaw12', '09440226826', 13, '2024-12-28 09:01:40', '2025-01-05 08:26:03'),
 (7, '8/YATHANA(N)385949', '2006-09-04', 'female', '09904689489', 'Myothit, Magway', 'Thet Mon', '09765427586', 17, '2024-12-30 15:42:36', '2025-01-05 08:26:21'),
-(15, '8/THARANA(N)00949', '1998-06-05', 'female', '09442498385', 'No (12), Yan Myo Naing, Magway', 'Kyaw Ko Ko ', '09442498385', 29, '2025-01-05 14:00:32', '2025-01-05 14:00:32');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subjects`
---
-
-CREATE TABLE `subjects` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `course_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `subjects`
---
-
-INSERT INTO `subjects` (`id`, `name`, `course_id`) VALUES
-(2, 'SEO Fundamentals, Social Media Marketing, Content Marketing, Paid Media Advertising, Email Marketing Techniques, Google Analytics, Branding Management, Influencer Marketing Strategies', 2),
-(3, 'Advanced UI/UX Principles, User Research, Prototyping & Wireframing, Interaction Design, Visual Design Techniques, Design Systems, Usability Testing, Design Tools (Figma, XD)', 3),
-(4, 'UI/UX Introduction, Design Principles, Wireframing Basics, Color Theory, Usability Design, Accessibility Basics, Mobile Design Fundamentals, Intro to Design Tools', 5),
-(7, 'SEO Fundamentals, Social Media Strategy, Content Marketing, PPC Advertising, Email Marketing, Google Analytics, Branding Strategy, Influencer Marketing', 8);
+(15, '8/THARANA(N)00949', '1998-06-05', 'female', '09442498385', 'No (12), Yan Myo Naing, Magway', 'Kyaw Ko Ko ', '09442498385', 29, '2025-01-05 14:00:32', '2025-01-05 14:00:32'),
+(17, '8/2sfa/341', '2000-02-19', 'male', '09111111111', 'Myanmar, Yangon, Hlaing township no 4 Damayone street', 'sasfda', 'asf', 33, '2025-01-08 05:15:17', '2025-01-08 05:15:17');
 
 -- --------------------------------------------------------
 
@@ -424,7 +440,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `u
 (17, 'Thet Thet Mon', 'thetthetmon.mgaway@gmail.com', '$2y$10$iMFZJnLIoUuC7ucu.GnzCOnFHmgvuch8FRpO1hVJ83xRvJNO2b/Ba', 'student', '2024-12-30 15:42:36', '2025-01-03 12:16:01'),
 (24, 'Hein Htet San', 'heinhtetsan@gmail.com', '$2y$10$X5/athrTVuIQncnjZjtE6uwf6piPLnwg1JOZ7.YmkbUFwwu0XJ2Ae', 'teacher', '2025-01-04 02:51:05', '2025-01-04 05:29:16'),
 (29, 'Kyaw Ko Ko ', 'kyawkyaw@gmail.com', '$2y$10$Em8sjj3uH9pGPKB1RopZOeprpOC6JzIe3/iaJ7NkIIFgarvuKEehq', 'student', '2025-01-05 14:00:32', '2025-01-05 14:00:32'),
-(30, 'Htun Kyaw', 'htunkyaw@gmail.com', '$2y$10$uvrnF/QZqSNY8HMDu5FuwurMUytC0rVLHdSQyEzqcNe1S5qt/G0l6', 'teacher', '2025-01-05 17:55:38', '2025-01-05 17:55:38');
+(30, 'Htun Kyaw', 'htunkyaw@gmail.com', '$2y$10$uvrnF/QZqSNY8HMDu5FuwurMUytC0rVLHdSQyEzqcNe1S5qt/G0l6', 'teacher', '2025-01-05 17:55:38', '2025-01-05 17:55:38'),
+(33, 'Htun Kyaw 7', 'hk@gmail.com', '$2y$10$Fx0QzN0a9922db.8Ug6iuOKPfAzw41z3Y3qJwQr/EfACeOmqpUPrO', 'student', '2025-01-08 05:15:17', '2025-01-08 05:15:17');
 
 --
 -- Indexes for dumped tables
@@ -435,6 +452,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `u
 --
 ALTER TABLE `access_tokens`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `chapters`
+--
+ALTER TABLE `chapters`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_course` (`course_id`);
 
 --
 -- Indexes for table `courses`
@@ -473,13 +497,6 @@ ALTER TABLE `students`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subjects`
---
-ALTER TABLE `subjects`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_course` (`course_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -494,25 +511,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `access_tokens`
 --
 ALTER TABLE `access_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+
+--
+-- AUTO_INCREMENT for table `chapters`
+--
+ALTER TABLE `chapters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment_types`
@@ -524,34 +547,28 @@ ALTER TABLE `payment_types`
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `subjects`
---
-ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `subjects`
+-- Constraints for table `chapters`
 --
-ALTER TABLE `subjects`
+ALTER TABLE `chapters`
   ADD CONSTRAINT `fk_course` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

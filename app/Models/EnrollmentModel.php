@@ -37,11 +37,11 @@ class EnrollmentModel
         return $this->db->selectOne($sql, [$id]);
     }
 
-    // public function findByStudentId($studentId)
-    // {
-    //     $sql = "SELECT * FROM enrollments WHERE student_id = ?";
-    //     return $this->db->select($sql, [$studentId]);
-    // }
+    public function updateStatus($id, $status)
+    {
+        $sql = "UPDATE enrollments SET status = ? WHERE id = ?";
+        return $this->db->update($sql, [$status, $id]);
+    }
 
     public function create($data)
     {        

@@ -16,9 +16,12 @@ class PaymentModel
     public function fetchAll()
     {
         $sql = "
-            SELECT payments.*, students.nrc_id, users.name AS student_name, payment_types.paymenttypename, payment_types.paymenttypeimage
+            SELECT payments.*, students.nrc_id, users.name AS student_name, 
+            payment_types.paymenttypename, payment_types.paymenttypeimage,
+            enrollments.status
             FROM payments
             INNER JOIN payment_types ON payment_types.paymenttypeid = payments.payment_type_id
+            INNER JOIN enrollments ON enrollments.id = payments.enrollment_id
             INNER JOIN students ON payments.student_id = students.id
             INNER JOIN users ON students.user_id = users.id";
         return $this->db->select($sql);

@@ -78,6 +78,7 @@ class PaymentController extends Controller
 
         if (!empty($requestData['status']) && in_array($requestData['status'], ['pending', 'confirmed', 'rejected'])) {
             $result = $this->paymentModel->updateStatus($request['params'][0], $requestData['status']);
+            $result = $this->enrollmentModel->updateStatus($request['params'][0], $requestData['status']);
 
             if ($result) {
                 $response = ResponseHelper::success($result, 'Payment updated successfully');
