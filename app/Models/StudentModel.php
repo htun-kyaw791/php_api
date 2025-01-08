@@ -133,5 +133,39 @@ class StudentModel
         $sql = "DELETE FROM students WHERE id = ?";
         return $this->db->delete($sql, [$id]);
     }
+
+    public function totalStudents()
+    {
+        $sql = "SELECT COUNT(*) AS total_students FROM students";
+        return $this->db->selectOne($sql);
+    }
+
+    public function genderBreakdown()
+    {
+        $sql = "
+            SELECT 
+                gender, 
+                COUNT(*) AS total 
+            FROM students
+            GROUP BY gender
+        ";
+        return $this->db->select($sql);
+    }
+
+    public function recentRegistrations()
+    {
+        $sql = "
+            SELECT 
+                id, 
+                nrc_id, 
+                date_of_birth, 
+                gender, 
+                created_at 
+            FROM students
+            ORDER BY created_at DESC
+            LIMIT 5
+        ";
+        return $this->db->select($sql);
+    }
     
 }

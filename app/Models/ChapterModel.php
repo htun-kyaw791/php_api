@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Core\Database;
 
-class SubjectModel
+class ChapterModel
 {
     private $db;
 
@@ -16,10 +16,10 @@ class SubjectModel
     public function fetchAll()
     {
         $sql = "
-           SELECT subjects.*,courses.name As course_name,
+           SELECT chapters.*,courses.name As course_name,
             users.id AS teacher_id, users.name AS teacher_name
-            FROM subjects
-            INNER JOIN courses ON courses.id = subjects.course_id
+            FROM chapters
+            INNER JOIN courses ON courses.id = chapters.course_id
             INNER JOIN users ON courses.teacher_id = users.id";
         return $this->db->select($sql);
     }
@@ -29,21 +29,21 @@ class SubjectModel
     public function findById($id)
     {
         $sql = "
-            SELECT subjects.*,courses.name As course_name,
+            SELECT chapters.*,courses.name As course_name,
             users.id AS teacher_id, users.name AS teacher_name
-            FROM subjects
-            INNER JOIN courses ON courses.id = subjects.course_id
+            FROM chapters
+            INNER JOIN courses ON courses.id = chapters.course_id
             INNER JOIN users ON courses.teacher_id = users.id
-            WHERE subjects.id = ?";
+            WHERE chapters.id = ?";
         return $this->db->selectOne($sql, [$id]);
     }
     public function findByTeacherId($teacher_id)
     {
         $sql = "
-            SELECT subjects.*,courses.name As course_name,
+            SELECT chapters.*,courses.name As course_name,
             users.id AS teacher_id, users.name AS teacher_name
-            FROM subjects
-            INNER JOIN courses ON courses.id = subjects.course_id
+            FROM chapters
+            INNER JOIN courses ON courses.id = chapters.course_id
             INNER JOIN users ON courses.teacher_id = users.id
             WHERE courses.teacher_id = ?";
         return $this->db->selectOne($sql, [$teacher_id]);
@@ -52,28 +52,28 @@ class SubjectModel
 
     public function findByName($name)
     {
-        $sql = "SELECT * FROM subjects WHERE name = ?";
+        $sql = "SELECT * FROM chapters WHERE name = ?";
         return $this->db->selectOne($sql, [$name]);
     }
 
-    // public function findBySubjectId($course_id)
+    // public function findByChapterId($course_id)
     // {
-    //     $sql = "SELECT * FROM subjects WHERE course_id = ?";
+    //     $sql = "SELECT * FROM chapters WHERE course_id = ?";
     //     return $this->db->select($sql, [$course_id]);
     // }
     public function create($data)
     {
         
         $sql = "
-            INSERT INTO subjects (name, course_id) 
-            VALUES (:name, :course_id)";
+            INSERT INTO chapters (name, course_id, link) 
+            VALUES (:name, :course_id, :link)";
         return $this->db->insert($sql, $data);
     }
 
     // public function update($id, $data)
     // {
     //     $sql = "
-    //         UPDATE subjects 
+    //         UPDATE chapters 
     //         SET id = :id,
     //             name = :name, 
     //             course_id = :course_id
@@ -83,7 +83,7 @@ class SubjectModel
     // }
     public function update($id, $data)
     {
-        $sql = "UPDATE subjects SET ";
+        $sql = "UPDATE chapters SET ";
         $fields = [];
         $params = [];
 
@@ -94,6 +94,10 @@ class SubjectModel
         if (!empty($data['course_id'])) {
             $fields[] = "course_id = :course_id";
             $params['course_id'] = $data['course_id'];
+        }
+        if (!empty($data['link'])) {
+            $fields[] = "link = :link";
+            $params['link'] = $data['link'];
         }
 
         $sql .= implode(", ", $fields) . " WHERE id = :id";
@@ -110,7 +114,7 @@ class SubjectModel
 
     public function delete($id)
     {
-        $sql = "DELETE FROM subjects WHERE id = ?";
+        $sql = "DELETE FROM chapters WHERE id = ?";
         return $this->db->delete($sql, [$id]);
     }
 }

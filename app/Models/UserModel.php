@@ -110,4 +110,48 @@ class UserModel
         return $this->db->select($sql, $params);
     }
 
+    public function teacherWithCourse() {
+        $sql = "
+            SELECT 
+                u.id AS teacher_id,
+                u.name AS teacher_name,
+                u.email AS teacher_email,
+                c.id AS course_id,
+                c.name AS course_name,
+                c.description AS course_description
+            FROM 
+                users u
+            LEFT JOIN 
+                courses c ON u.id = c.teacher_id
+            WHERE 
+                u.role = 'teacher'
+        ";
+        
+        $data = $this->db->select($sql);
+    
+        $teachers = [];
+        foreach ($data as $row) {
+            $teacherId = $row['teacher_id'];
+            if (!isset($teachers[$teacherId])) {
+                $teachers[$teacherId] = [
+                    'id' => $row['teacher_id'],
+                    'name' => $row['teacher_name'],
+                    'email' => $row['teacher_email'],
+                    'courses' => []
+                ];
+            }
+    
+            if ($row['course_id'] !== null) {
+                $teachers[$teacherId]['courses'][] = [
+                    'id' => $row['course_id'],
+                    'name' => $row['course_name'],
+                    'description' => $row['course_description'],
+                ];
+            }
+        }
+    
+        return array_values($teachers);
+    }
+    
+
 }

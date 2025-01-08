@@ -87,4 +87,32 @@ class PaymentModel
         $sql = "DELETE FROM payments WHERE id = ?";
         return $this->db->delete($sql, [$id]);
     }
+
+    public function getPaymentSummary()
+    {
+        $sql = "
+            SELECT 
+                SUM(amount) AS total_revenue,
+                COUNT(*) AS total_payments,
+                SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending_payments,
+                SUM(CASE WHEN status = 'confirmed' THEN 1 ELSE 0 END) AS confirmed_payments
+            FROM payments
+        ";
+        return $this->db->select($sql);
+    }
+
+    // Revenue per payment type
+    public function revenueByPaymentType()
+    {
+        $sql = "
+            SELECT 
+                pt.paymenttypename AS payment_type,
+                SUM(p.amount) AS total_revenue
+            FROM payments p
+            INNER JOIN payment_types pt ON p.payment_type_id = pt.paymenttypeid
+            GROUP BY pt.paymenttypename
+        ";
+        return $this->db->select($sql);
+    }
+
 }

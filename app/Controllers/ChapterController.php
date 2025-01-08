@@ -3,42 +3,43 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use App\Models\SubjectModel;
+use App\Models\ChapterModel;
 use App\Helpers\ResponseHelper;
 use App\Helpers\FileHelper;
 
-class SubjectController extends Controller
+class ChapterController extends Controller
 {
-    private $subjectModel;
+    private $chapterModel;
 
     public function __construct()
     {
-        $this->subjectModel = new SubjectModel();
+        $this->chapterModel = new ChapterModel();
     }
-    public function createSubject()
+    public function createChapter()
     {
         $requestData = json_decode(file_get_contents('php://input'), true);
-        if (empty($requestData['name']) || empty($requestData['course_id'])  ) {
+        if (empty($requestData['name']) || empty($requestData['course_id']) || empty($requestData['link'])) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
 
-        $existingName = $this->subjectModel->findByName($requestData['name']);
+        $existingName = $this->chapterModel->findByName($requestData['name']);
         if ($existingName) {
             $response = ResponseHelper::error('Name Already Exist', 400);
             return $this->jsonResponse($response, 400);
         }
 
-        $subjectData = [
+        $chapterData = [
             'name' => $requestData['name'],
-            'course_id' => $requestData['course_id']
+            'course_id' => $requestData['course_id'],
+            'link' => $requestData['link']
         ];
-        $result = $this->subjectModel->create($subjectData);
+        $result = $this->chapterModel->create($chapterData);
         $response = ResponseHelper::success($result, 'Data created successfully', 201);
         return $this->jsonResponse($response, 201);
     }
 
-    public function updateSubject($request)
+    public function updateChapter($request)
     {
         // not allow teachers to update data
         if($request['user']['role'] =='teacher' && $request['user']['id'] != $request['params'][0]  )
@@ -47,10 +48,10 @@ class SubjectController extends Controller
             return $this->jsonResponse($response, 403);
         }
 
-        $Subject = $this->subjectModel->findById($request['params'][0]);
-        if (!$Subject) 
+        $Chapter = $this->chapterModel->findById($request['params'][0]);
+        if (!$Chapter) 
         {
-            $response = ResponseHelper::error('Subject not found', 403);
+            $response = ResponseHelper::error('Chapter not found', 403);
             return $this->jsonResponse($response, 403);
         }
 
@@ -60,18 +61,20 @@ class SubjectController extends Controller
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
-        $existingName = $this->subjectModel->findByName($requestData['name']);
+        $existingName = $this->chapterModel->findByName($requestData['name']);
         if ($existingName) {
             $response = ResponseHelper::error('Name Already Exist', 400);
             return $this->jsonResponse($response, 400);
         }
         else{
-            $subjectData = [
+            $chapterData = [
                 'name' => $requestData['name'],
-                'course_id' => $requestData['course_id']
+                'course_id' => $requestData['course_id'],
+                'link' => $requestData['link']
+
             ];
         }
-        $result = $this->subjectModel->update($request['params'][0],$subjectData);
+        $result = $this->chapterModel->update($request['params'][0],$chapterData);
 
         if ($result) {
             $response = ResponseHelper::success($result, 'Data updated successfully');
@@ -83,37 +86,37 @@ class SubjectController extends Controller
     }
 
 
-    public function getSubject()
+    public function getChapter()
     {
-        $subjects = $this->subjectModel->fetchAll();
-        $response = ResponseHelper::success($subjects, 'Data fetched successfully');
+        $chapters = $this->chapterModel->fetchAll();
+        $response = ResponseHelper::success($chapters, 'Data fetched successfully');
         return $this->jsonResponse($response);
     }
-    public function getSubjectById($request)
+    public function getChapterById($request)
     {
-        $subject = $this->subjectModel->findById($request['params'][0]);
-        if ($subject) {
-            $response = ResponseHelper::success($subject, 'Data fetched successfully');
+        $chapter = $this->chapterModel->findById($request['params'][0]);
+        if ($chapter) {
+            $response = ResponseHelper::success($chapter, 'Data fetched successfully');
         } else {
-            $response = ResponseHelper::error('Subject not found', 403);
+            $response = ResponseHelper::error('Chapter not found', 403);
         }
 
         return $this->jsonResponse($response);
     }
     public function getTeacherByID($request)
     {
-        $subject = $this->subjectModel->findByTeacherId($request['params'][0]);
-        if ($subject) {
-            $response = ResponseHelper::success($subject, 'Data fetched successfully');
+        $chapter = $this->chapterModel->findByTeacherId($request['params'][0]);
+        if ($chapter) {
+            $response = ResponseHelper::success($chapter, 'Data fetched successfully');
         } else {
-            $response = ResponseHelper::error('Subject not found', 403);
+            $response = ResponseHelper::error('Chapter not found', 403);
         }
 
         return $this->jsonResponse($response);
     }
-    public function deleteSubject($request)
+    public function deleteChapter($request)
     {
-        $result = $this->subjectModel->delete($request['params'][0]);
+        $result = $this->chapterModel->delete($request['params'][0]);
         if ($result) {
             $response = ResponseHelper::success(null, 'Data deleted successfully', 204);
         } else {

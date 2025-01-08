@@ -16,13 +16,10 @@ class CourseModel
     public function fetchAll()
     {
         $sql = "
-            SELECT courses.*, sections.cost,users.id AS teacher_id, 
-            users.name AS teacher_name,
-            subjects.name As subject_name
+            SELECT courses.*,
+            users.name AS teacher_name
             FROM courses
-            INNER JOIN sections ON sections.course_ids = courses.id
-            INNER JOIN users ON courses.teacher_id = users.id
-            INNER JOIN subjects ON subjects.course_id = courses.id";
+            INNER JOIN users ON courses.teacher_id = users.id";
         return $this->db->select($sql);
     }
     // SELECT courses.*, users.id, users.name AS teacher_name
@@ -31,13 +28,10 @@ class CourseModel
     public function findById($id)
     {
         $sql = "
-           SELECT courses.*, sections.cost,users.id AS teacher_id, 
-            users.name AS teacher_name,
-            subjects.name As subject_name
+           SELECT courses.*, 
+            users.name AS teacher_name
             FROM courses
-            INNER JOIN sections ON sections.course_ids = courses.id
             INNER JOIN users ON courses.teacher_id = users.id
-            INNER JOIN subjects ON subjects.course_id = courses.id
             WHERE courses.id = ?";
         return $this->db->selectOne($sql, [$id]);
     }
@@ -48,7 +42,6 @@ class CourseModel
            SELECT co.id,co.name,
            GROUP_CONCAT(JSON_OBJECT('id', sub.id, 'name', sub.name)) AS sub_objects
             FROM courses co
-            LEFT JOIN subjects sub ON co.id = sub.course_id
             WHERE co.teacher_id = ?
             GROUP BY co.id, co.name";
             // Cast result to an object
@@ -103,4 +96,22 @@ return $result;
         $sql = "DELETE FROM courses WHERE id = ?";
         return $this->db->delete($sql, [$id]);
     }
+
+    public function getPopularCourses()
+    {
+        $sql = "
+            SELECT 
+                c.id, 
+                c.name, 
+                COUNT(e.id) AS enrollment_count
+            FROM courses c
+            LEFT JOIN sections s ON JSON_CONTAINS(s.course_ids, JSON_QUOTE(c.id))
+            LEFT JOIN enrollments e ON s.id = e.section_id
+            GROUP BY c.id
+            ORDER BY enrollment_count DESC
+            LIMIT 5
+        ";
+        return $this->db->select($sql);
+    }
+
 }

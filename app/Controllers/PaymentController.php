@@ -6,21 +6,26 @@ use Core\Controller;
 use App\Models\PaymentModel;
 use App\Helpers\ResponseHelper;
 use App\Helpers\FileHelper;
+use App\Models\EnrollmentModel;
 
 class PaymentController extends Controller
 {
     private $paymentModel;
+    private $enrollmentModel;
+
 
     public function __construct()
     {
         $this->paymentModel = new PaymentModel();
+        $this->enrollmentModel = new EnrollmentModel();    
+
     }
 
     public function createPayment()
     {
 
         $requestData = $_POST;
-        if (empty($requestData['payment_type_id']) || empty($requestData['student_id']) || empty($requestData['enrollment_id']) || empty($requestData['amount'])) {
+        if (empty($requestData['payment_type_id']) || empty($requestData['student_id']) || empty($requestData['amount']) || empty($requestData['section_id'])) {
             $response = ResponseHelper::error('Missing required fields', 400);
             return $this->jsonResponse($response, 400);
         }
@@ -40,7 +45,23 @@ class PaymentController extends Controller
 
         $requestData['status'] = 'pending';
 
-        $result = $this->paymentModel->create($requestData);
+        $enrollmentData = [
+            'student_id' => $requestData['student_id'],
+            'section_id' => $requestData['section_id'],
+            'amount' => $requestData['amount'],
+            'status' => $requestData['status']
+        ];
+        $enrollment_id = $this->enrollmentModel->create($enrollmentData);
+
+        $paymentData = [
+            'payment_type_id' => $requestData['payment_type_id'],
+            'student_id' => $requestData['student_id'],
+            'enrollment_id' => $enrollment_id,
+            'amount' => $requestData['amount'],
+            'evidence_image' => $requestData['evidence_image'],
+            'status' => $requestData['status']
+        ];
+        $result = $this->paymentModel->create($paymentData);
         $response = ResponseHelper::success($result, 'Payment submitted successfully', 201);
         return $this->jsonResponse($response, 201);
     }

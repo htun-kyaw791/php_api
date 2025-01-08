@@ -17,6 +17,13 @@ class UserController extends Controller
 
     }
 
+    public function getTeacherWithCourses(){
+        $teacherWithCourse = $this->userModel->teacherWithCourse();
+
+        $response = ResponseHelper::success($teacherWithCourse, 'Data fetched successfully');
+        return $this->jsonResponse($response);
+    }
+
     public function getTeacher()
     {
         $filters = [
