@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 08, 2025 at 03:55 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jan 09, 2025 at 07:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -214,7 +214,60 @@ INSERT INTO `access_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at
 (175, 7, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYyMzQzOTQsImV4cCI6MTczNjMyMDc5NCwidXNlcklkIjo3fQ.4EvSc05v08WaxW6hhG68JfHGjeJkpHbGEmiKRlb6Vp4', '2025-01-07 07:19:54', '0000-00-00 00:00:00'),
 (176, 33, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMTMzMTcsImV4cCI6MTczNjM5OTcxNywidXNlcklkIjoiMzMifQ.V2ZuNUHnkfkJOZcaepXYnl89hcFqfRJjhZKyx08dyiw', '2025-01-08 05:15:17', '0000-00-00 00:00:00'),
 (177, 33, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMjQ0NzksImV4cCI6MTczNjQxMDg3OSwidXNlcklkIjozM30.oVX9XGlNpUhql2x_YnsqTdcNfEY2-qFjvknzs8afJi8', '2025-01-08 08:21:19', '0000-00-00 00:00:00'),
-(178, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMjg0NDUsImV4cCI6MTczNjQxNDg0NSwidXNlcklkIjoxfQ.wIiNxz1EoT1etKCZrwRQwGZTsNU_LUa-wWBrcWWbybI', '2025-01-08 09:27:25', '0000-00-00 00:00:00');
+(178, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzMjg0NDUsImV4cCI6MTczNjQxNDg0NSwidXNlcklkIjoxfQ.wIiNxz1EoT1etKCZrwRQwGZTsNU_LUa-wWBrcWWbybI', '2025-01-08 09:27:25', '0000-00-00 00:00:00'),
+(179, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzNTI3NzEsImV4cCI6MTczNjQzOTE3MSwidXNlcklkIjoxN30.ahcMyG-wKKx6oaLzUGw34v4d43xII6Exvn-nEQZJsAw', '2025-01-08 16:12:51', '0000-00-00 00:00:00'),
+(180, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzNTI5MTUsImV4cCI6MTczNjQzOTMxNSwidXNlcklkIjoxfQ.80bbraJKfR694923LqejlqegqxKa2fpNDv6O89Hnyco', '2025-01-08 16:15:15', '0000-00-00 00:00:00'),
+(181, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzNTQyMzQsImV4cCI6MTczNjQ0MDYzNCwidXNlcklkIjoxfQ.aC265uqJhXJHv4e_xT2ic9Ek-47mA0EgMMdTcKOnhaA', '2025-01-08 16:37:14', '0000-00-00 00:00:00'),
+(182, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzNTQyNjAsImV4cCI6MTczNjQ0MDY2MCwidXNlcklkIjoxN30.gesfnWvyhj0rLq2bs87bvvxOOX0bqkKnpdX96fLf1w8', '2025-01-08 16:37:40', '0000-00-00 00:00:00'),
+(183, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzYzNTQ3ODEsImV4cCI6MTczNjQ0MTE4MSwidXNlcklkIjoxfQ.Pn9Cb6S6mYQa2DbReO_KyV1zc5k1DWQ5Op5d9Yk28jE', '2025-01-08 16:46:21', '0000-00-00 00:00:00'),
+(184, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTUyMTIsImV4cCI6MTczNjUwMTYxMiwidXNlcklkIjoxN30.0uZG3h0S2x2enrqjWfMIiQ08-mCQNIYyVDqCgJGVBm0', '2025-01-09 09:33:32', '0000-00-00 00:00:00'),
+(185, 29, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTYzNDksImV4cCI6MTczNjUwMjc0OSwidXNlcklkIjoyOX0.aD5qHi5ZWAtCSAi3PpC6RZqssuC9lVQEgTHHljVBtqE', '2025-01-09 09:52:29', '0000-00-00 00:00:00'),
+(186, 24, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTYzNzUsImV4cCI6MTczNjUwMjc3NSwidXNlcklkIjoyNH0.WAhXOB--SqLucF84tnJBHNzBeJ9KBtIuIR6CpNJjzzk', '2025-01-09 09:52:55', '0000-00-00 00:00:00'),
+(187, 10, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTY0NjIsImV4cCI6MTczNjUwMjg2MiwidXNlcklkIjoxMH0.jb66FNBcQ4DqGrr_uPwYUhNTDHJWhfXGqnpkJnwNeV0', '2025-01-09 09:54:22', '0000-00-00 00:00:00'),
+(188, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTcwMzQsImV4cCI6MTczNjUwMzQzNCwidXNlcklkIjoxN30.lchoUtiVahjBelqN5DFE2SEKk4L8oXeR4I1kOUliSVk', '2025-01-09 10:03:54', '0000-00-00 00:00:00'),
+(189, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTc3NTYsImV4cCI6MTczNjUwNDE1NiwidXNlcklkIjoxfQ.EzKereBm0qIBVMb2WlLxyJSgEmxfnOOBUcHRGrL-GQ0', '2025-01-09 10:15:56', '0000-00-00 00:00:00'),
+(190, 42, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTgyNTYsImV4cCI6MTczNjUwNDY1NiwidXNlcklkIjoiNDIifQ.Zukv8HCkEFB1ii0p1xKxioF6HiQeH5Gq86xVLgG_JM8', '2025-01-09 10:24:16', '0000-00-00 00:00:00');
+INSERT INTO `access_tokens` (`id`, `user_id`, `token`, `created_at`, `expires_at`) VALUES
+(191, 43, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTgzNjcsImV4cCI6MTczNjUwNDc2NywidXNlcklkIjoiNDMifQ.LtGYMm-4-xOpFDir3e9rnRZTjgY3p1Aip7UN0kd6ch4', '2025-01-09 10:26:07', '0000-00-00 00:00:00'),
+(192, 44, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTg0NzEsImV4cCI6MTczNjUwNDg3MSwidXNlcklkIjoiNDQifQ.c39Hqq6vjfiEjFf2K4FdeY2WUrOSrty5kvCJG0jI_ew', '2025-01-09 10:27:51', '0000-00-00 00:00:00'),
+(193, 45, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTg2NTYsImV4cCI6MTczNjUwNTA1NiwidXNlcklkIjoiNDUifQ.CdhcU1bBRYFQCsnJ0hfd5pDC7af6MdRlCU1-NMrxqfA', '2025-01-09 10:30:56', '0000-00-00 00:00:00'),
+(194, 46, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTg3ODUsImV4cCI6MTczNjUwNTE4NSwidXNlcklkIjoiNDYifQ.tiQT4EFygkqc3CLGGdUhwB3nBn3SPLrjCzci4Aefn94', '2025-01-09 10:33:05', '0000-00-00 00:00:00'),
+(195, 47, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTg5MDIsImV4cCI6MTczNjUwNTMwMiwidXNlcklkIjoiNDcifQ.rUz9SZmUTz0mTx0pQod9Mowo6QvVFMXcepKkufJlN_w', '2025-01-09 10:35:02', '0000-00-00 00:00:00'),
+(196, 48, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTkwMzUsImV4cCI6MTczNjUwNTQzNSwidXNlcklkIjoiNDgifQ.QUsFCkDPB3ABKrvUWXW9pXfQ8EXil7tb3nI6YknkZtU', '2025-01-09 10:37:15', '0000-00-00 00:00:00'),
+(197, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTkxNzQsImV4cCI6MTczNjUwNTU3NCwidXNlcklkIjoxfQ.P7Z8GXdOR3SE8-dWZP54KJ0rQObePyGJw8sTr86tjDg', '2025-01-09 10:39:34', '0000-00-00 00:00:00'),
+(198, 49, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTkzNjEsImV4cCI6MTczNjUwNTc2MSwidXNlcklkIjoiNDkifQ.YLRvsgu2jsoQjZ-UOrHHWq1_PbkSTDabkWWoHfweqU8', '2025-01-09 10:42:41', '0000-00-00 00:00:00'),
+(199, 50, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTk1NTksImV4cCI6MTczNjUwNTk1OSwidXNlcklkIjoiNTAifQ.k5XQcEOnJgcSQ2ii3NDfvclX9ZtuobsH_-0Enr9_A3w', '2025-01-09 10:45:59', '0000-00-00 00:00:00'),
+(200, 51, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTk3NjMsImV4cCI6MTczNjUwNjE2MywidXNlcklkIjoiNTEifQ.G9TvUySoNILXHZNYdQXED7ET7FoTgFU4XOKuSHGmS6A', '2025-01-09 10:49:23', '0000-00-00 00:00:00'),
+(201, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MTk3OTcsImV4cCI6MTczNjUwNjE5NywidXNlcklkIjoxfQ.6ij6hA-NfuOiMY8o_O_2V6hYAFVOr_Y-eybPAfaBbVo', '2025-01-09 10:49:57', '0000-00-00 00:00:00'),
+(202, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjA0NDQsImV4cCI6MTczNjUwNjg0NCwidXNlcklkIjoxN30.ZXGiqxAOdiqe-mMyr-RiturrQ1DFt9X7JFpUa22aU9k', '2025-01-09 11:00:44', '0000-00-00 00:00:00'),
+(203, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjA2MjksImV4cCI6MTczNjUwNzAyOSwidXNlcklkIjoxfQ.wnecl0rDAEJbYj8MJ8lP7wIqNjkViuYL5l1rt7CeQXQ', '2025-01-09 11:03:49', '0000-00-00 00:00:00'),
+(204, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjA5NDQsImV4cCI6MTczNjUwNzM0NCwidXNlcklkIjoxN30.7x0UJQE6Q_vwq3Hrq80LHGNmLfQ6lSSgIu9gpPoH_Q4', '2025-01-09 11:09:04', '0000-00-00 00:00:00'),
+(205, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjA5ODAsImV4cCI6MTczNjUwNzM4MCwidXNlcklkIjoxfQ.7ppPodnF8Hw8sEetFekmValP2ufpZfGxcQrXJmubjlI', '2025-01-09 11:09:40', '0000-00-00 00:00:00'),
+(206, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjE2ODcsImV4cCI6MTczNjUwODA4NywidXNlcklkIjoxN30.01pM6Rfe5QNpxG4VmxIk81q100mZv5Hh6840wjx0qkY', '2025-01-09 11:21:27', '0000-00-00 00:00:00'),
+(207, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjE3MzMsImV4cCI6MTczNjUwODEzMywidXNlcklkIjoxfQ.9FjSvC9OYZL2U8cAU5JQI-fgGb4TOOes05eIz9bZxoY', '2025-01-09 11:22:13', '0000-00-00 00:00:00'),
+(208, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjE4NzIsImV4cCI6MTczNjUwODI3MiwidXNlcklkIjoxN30.rSI9Uy2VRyc-DleEFUc5SqW6r8aADXhm3dIG6ZuPhUc', '2025-01-09 11:24:32', '0000-00-00 00:00:00'),
+(209, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0MjIwODksImV4cCI6MTczNjUwODQ4OSwidXNlcklkIjoxfQ.1dLl2F7eAvPo3RD9gcVVG41PcvpwoPK6ITgYqnMebZE', '2025-01-09 11:28:09', '0000-00-00 00:00:00'),
+(210, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0Mzk0NzgsImV4cCI6MTczNjUyNTg3OCwidXNlcklkIjoxfQ.IZjKj8582jDMvMcGfuHCK0CU8IbKS2J_bM1Jp5AP4dg', '2025-01-09 16:17:58', '0000-00-00 00:00:00'),
+(211, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDE5NzUsImV4cCI6MTczNjUyODM3NSwidXNlcklkIjoxfQ.Fj0_zxJGYBjG_XzS6uNaZbYQAC-Mmmkv-OlCQqjPHXE', '2025-01-09 16:59:35', '0000-00-00 00:00:00'),
+(212, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDIzNDQsImV4cCI6MTczNjUyODc0NCwidXNlcklkIjo0MX0.QdK5VA7ViYfqIREvaVlE0PrInD_Z0ls0oJLIrB47rLA', '2025-01-09 17:05:44', '0000-00-00 00:00:00'),
+(213, 36, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI0MTIsImV4cCI6MTczNjUyODgxMiwidXNlcklkIjozNn0.tsLAcaOOsdB6b4KBRuFxTSZUUQXx-zXeEXiWQaLlkCQ', '2025-01-09 17:06:52', '0000-00-00 00:00:00'),
+(214, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI0NzksImV4cCI6MTczNjUyODg3OSwidXNlcklkIjo0MX0.jkRO554O4l7idCh5J-R6gx2SyhF1MQoPccOF0BG00HA', '2025-01-09 17:07:59', '0000-00-00 00:00:00'),
+(215, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI1NzUsImV4cCI6MTczNjUyODk3NSwidXNlcklkIjoxfQ.HEWlJJFsNYAXR-OjS0pnTVUEqpPXxRsNrtIKldI_KrQ', '2025-01-09 17:09:35', '0000-00-00 00:00:00'),
+(216, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI2MTAsImV4cCI6MTczNjUyOTAxMCwidXNlcklkIjo0MX0.bKv1L6Wiw_wOnQrTVWJJzqpWnNFdaz7lqVxo2APz0gg', '2025-01-09 17:10:10', '0000-00-00 00:00:00'),
+(217, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI4MDcsImV4cCI6MTczNjUyOTIwNywidXNlcklkIjo0MX0.YV4GB7G-1Hqr4d7Lz7k9fQRWTGNoee8G3Jqs9tl3msc', '2025-01-09 17:13:27', '0000-00-00 00:00:00'),
+(218, 17, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI4NTMsImV4cCI6MTczNjUyOTI1MywidXNlcklkIjoxN30.dH2yCVX9gsyxm3AMNLrMK7tTKOap5r1bAd3FUBrbYD0', '2025-01-09 17:14:13', '0000-00-00 00:00:00'),
+(219, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDI5MzEsImV4cCI6MTczNjUyOTMzMSwidXNlcklkIjo0MX0.TwD_-ZXiP8twfpil6WXHc5CSYBjoz7Fhn-jCc3540zQ', '2025-01-09 17:15:31', '0000-00-00 00:00:00'),
+(220, 44, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDMwMzYsImV4cCI6MTczNjUyOTQzNiwidXNlcklkIjo0NH0.lgh7cY8Sq7FOE2OSwa8Zb9HmT08kUFHBdkCuQ7kkfMY', '2025-01-09 17:17:16', '0000-00-00 00:00:00'),
+(221, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDMwOTEsImV4cCI6MTczNjUyOTQ5MSwidXNlcklkIjoxfQ.XRAJyX232bFnn502vZvrNmJU0jv4Fx0r7ZHcMYIJRMA', '2025-01-09 17:18:11', '0000-00-00 00:00:00'),
+(222, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDMxOTIsImV4cCI6MTczNjUyOTU5MiwidXNlcklkIjo0MX0.Jum6zbTriEs07E-9jRYxdj-kq6GCnFE-VNkHQXFVGOI', '2025-01-09 17:19:52', '0000-00-00 00:00:00'),
+(223, 44, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDMyMDcsImV4cCI6MTczNjUyOTYwNywidXNlcklkIjo0NH0._Dp_h-ycZKgt8IqW1DuD5GnrLlDFKi3lDUIx5uizqo0', '2025-01-09 17:20:07', '0000-00-00 00:00:00'),
+(224, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDMyODUsImV4cCI6MTczNjUyOTY4NSwidXNlcklkIjo0MX0.9wQtchjkRaUplf163Kw44LAr1bBfPFv9OEG6lvxnnE8', '2025-01-09 17:21:25', '0000-00-00 00:00:00'),
+(225, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDM1MDEsImV4cCI6MTczNjUyOTkwMSwidXNlcklkIjoxfQ.nF_6rlfakJZ8kdq4rfKLynLXCI3qSmMK6CblA4b_JnE', '2025-01-09 17:25:01', '0000-00-00 00:00:00'),
+(226, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDQwMTAsImV4cCI6MTczNjUzMDQxMCwidXNlcklkIjo0MX0.l-qzebwRaNyZA-Ncxmaxi2dR8ILZlzwoQlY7Qbn4dXY', '2025-01-09 17:33:30', '0000-00-00 00:00:00'),
+(227, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDQ1NDAsImV4cCI6MTczNjUzMDk0MCwidXNlcklkIjoxfQ.4Pn1IXtXobZifcdvx7_JnvodO8kJa1TfP-ccSZhtVFo', '2025-01-09 17:42:20', '0000-00-00 00:00:00'),
+(228, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDcxOTMsImV4cCI6MTczNjUzMzU5MywidXNlcklkIjoxfQ.75PuPN8w_SBpFnQpcrYE5IzJ2tO57Vc_yUdaqNe9Kzk', '2025-01-09 18:26:33', '0000-00-00 00:00:00'),
+(229, 41, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDczNjgsImV4cCI6MTczNjUzMzc2OCwidXNlcklkIjo0MX0.h-5GjwOwhU_88SLJEJmqsY6YB087aLst4xjPiM-40dY', '2025-01-09 18:29:28', '0000-00-00 00:00:00'),
+(230, 1, 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ5b3VyX2FwcF9uYW1lIiwiYXVkIjoieW91cl9hcHBfYXVkaWVuY2UiLCJpYXQiOjE3MzY0NDc1MTUsImV4cCI6MTczNjUzMzkxNSwidXNlcklkIjoxfQ.dQ86GTI3FGucRHNLDQDevylH5g8i2jqKFiPbkmeEEXU', '2025-01-09 18:31:55', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -234,13 +287,84 @@ CREATE TABLE `chapters` (
 --
 
 INSERT INTO `chapters` (`id`, `name`, `link`, `course_id`) VALUES
-(2, 'SEO Fundamentals, Social Media Marketing, Content Marketing, Paid Media Advertising, Email Marketing Techniques, Google Analytics, Branding Management, Influencer Marketing Strategies', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 2),
-(3, 'Advanced UI/UX Principles, User Research, Prototyping & Wireframing, Interaction Design, Visual Design Techniques, Design Systems, Usability Testing, Design Tools (Figma, XD)', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 3),
-(4, 'UI/UX Introduction, Design Principles, Wireframing Basics, Color Theory, Usability Design, Accessibility Basics, Mobile Design Fundamentals, Intro to Design Tools', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 5),
-(7, 'SEO Fundamentals, Social Media Strategy, Content Marketing, PPC Advertising, Email Marketing, Google Analytics, Branding Strategy, Influencer Marketing', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 8),
-(9, 'HTML', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 13),
-(10, 'test edit', 'https://www.youtube.com/watch?v=VeNfHj6MhgA', 8),
-(11, 'Chapter 1', 'https://www.youtube.com/watch?v=lkIFF4maKMU', 13);
+(2, 'Chapter 1: Introduction to SWD', 'https://youtu.be/MYFgtnKMDp4?si=CiyAmL52wlyJq-Cr', 2),
+(3, 'Chapter 1: Professional Figma Introduction', 'https://youtu.be/7NiagEVWynU?si=dJAISP0Ccgg1WG1k', 3),
+(4, 'Chapter 1: Figma Introduction', 'https://youtu.be/0uqoVYo0Lvk?si=5I_IZWvQ24QYcqwZ', 5),
+(9, 'Chapter 2: Coding Part 1', 'https://youtu.be/DEFADGiknqA?si=QGLiD0czvEVeROeP', 13),
+(11, 'Chapter 1: Introduction', 'https://youtu.be/uzkedMF-l4Q?si=x-qIZCmF0IyHqLrS', 13),
+(12, 'Chapter 3: Coding Part 2', 'https://youtu.be/q5EctYACcI4?si=PZ9emFb_VS_X7QjL', 13),
+(13, 'Chapter 4: Coding Part 3', 'https://youtu.be/q5EctYACcI4?si=cgBW6fn_9ig4FcmI', 13),
+(14, 'Chapter 5: Thanos Portal Effect JavaScript Tutorial', 'https://youtu.be/KeVW_ezeGz8?si=XZPMUo4tKYC6fP18', 13),
+(15, 'Chapter 6: Realistic Rain Effect Three.js Tutorial', 'https://youtu.be/1bkibGIG8i0?si=W-iomTzfkKQpuLHJ', 13),
+(16, 'Chapter 7: Add 3D Model to WebSite in 5 Minutes ', 'https://youtu.be/1TeMXIWRrqE?si=b5j3jATecATjVC3X', 13),
+(17, 'Chapter 8: Create JavaScript 3D World in 5 Minutes', 'https://youtu.be/cp-H_6VODko?si=_SzpnDmqG4jTNt4n', 13),
+(18, 'Chapter 9: 3D Batman Logo with Volumetric Light', 'https://youtu.be/PPlKtHkHkSg?si=cCkkMOvPumVzneLi', 13),
+(19, 'Chapter 10: Nebula Cloud Particles Effect Three.js Tutorial', 'https://youtu.be/5f5wwQb22tE?si=1iFxfqzK9ullmYGt', 13),
+(20, 'Chapter 11: Three.js Postprocessing Effect Tutorial', 'https://youtu.be/jmld3mIKBIo?si=IngH77erAv0bbHy_', 13),
+(21, 'Chapter 12: 3D Space Warp JavaScript Effect ', 'https://youtu.be/Bed1z7f1EI4?si=1KZzcT2deGIVxkIj', 13),
+(22, 'Chapter 13: JavaScript Ultra Realistic Reflection Effect - Three.js Tutorial', 'https://youtu.be/Cowu77ZuROk?si=X8S8arOeR9-IadBz', 13),
+(23, 'Chapter 14: Three.js Realistic Lighting Setup Tutorial', 'https://youtu.be/7GGNzryHfTw?si=pEVxBfM63yEqmhvP', 13),
+(24, 'Chapter 15: Create GameStop Meme with JavaScript | Three.js Tutorial', 'https://youtu.be/zbHgpzrcm1o?si=FcSOzsxonWVWA9gg', 13),
+(25, 'Chapter 16: Three.js Realistic Material Reflection Tutorial in 8 Minutes', 'https://youtu.be/aJun0Q0CG_A?si=uDtxDlI1HYhzPPHT', 13),
+(26, 'Chapter 17: Conclusion', 'https://youtu.be/u-7SNWeZKk8?si=VaCrkKgEnWJUfz4q', 13),
+(27, 'Chapter 2: Learning Figma Components Part 1', 'https://youtu.be/qB2YoIBwYpc?si=rkNvkPxWt855ja-8', 5),
+(28, 'Chapter 3: learning Figma Components Part 2', 'https://youtu.be/bQe8bRd1v1Y?si=oPB1rrWJKkfosmv6', 5),
+(30, 'Chapter 4: learning Figma Components Part 3', 'https://youtu.be/96seNl1Wm-k?si=MfQeMg0nFE_OV1uq', 5),
+(31, 'Chapter 5: learning Figma Components Part 4	', 'https://youtu.be/96seNl1Wm-k?si=QHqcTy1Gqt2pS0fW', 5),
+(32, 'Chapter 6: learning Style and Auto Layout', 'https://youtu.be/ZIuSYtRiG6c?si=54NDPPhbxg6nueOy', 5),
+(33, 'Chapter 7: Figma Color Theory', 'https://youtu.be/9mmmmCdpSWI?si=ZeaCFpoy27tqVkcB', 5),
+(34, 'Chapter 8: Figma Conclusion', 'https://youtu.be/VyHr3QWDBHc?si=h3xoiO947vXeNYXZ', 5),
+(35, 'Chapter 2: Figma Designing Part 1', 'https://youtu.be/yQhpRlIO-Rw?si=kBOqZl_MEU97CTgP', 3),
+(36, 'Chapter 3: Figma Designing Part 2', 'https://youtu.be/0tH5qJdFc3E?si=YzNy042m_KbxCRo2', 3),
+(37, 'Chapter 4: Figma Designing Part 3', 'https://youtu.be/IIFi1trNkd0?si=gb16LF5pvjAnXBgR', 3),
+(38, 'Chapter 5: Figma, background, layer blur', 'https://youtu.be/5IILkF7TaC0?si=P31EbTTUSq6q3JVQ', 3),
+(39, 'Chapter 6: Figma Loading Animation', 'https://youtu.be/hUJWzErwV64?si=6VaDI284nbwMqoEu', 3),
+(40, 'Chapter 7: Figma Carousel', 'https://youtu.be/T048b7Y_Rfw?si=W--H0lbvX2mEoHis', 3),
+(41, 'Chapter 8: Conclusion (Figma Zoom In Effect)', 'https://youtu.be/VyHr3QWDBHc?si=2lAO0wEtXkc5sd2J', 3),
+(42, 'Chapter 1: Web Design Introduction', 'https://youtu.be/j6Ule7GXaRs?si=YDHxHgWveXRBX3wt', 18),
+(43, 'Chapter 2: Introduction to Web Design Episode 1', 'https://youtu.be/C72WkcUZvco?si=VYosy5hZV0Mpd1iK', 18),
+(44, 'Chapter 3: Introduction to Web Design Episode 2', 'https://youtu.be/R_gFhRsWLMw?si=HcP2j5Q66NHiJtbX', 18),
+(45, 'Chapter 4: Introduction to Web Design Episode 3', 'https://youtu.be/mQeplLGXIY4?si=YGSfq3RqA4ALmN0H', 18),
+(46, 'Chapter 5: Introduction to Web Design Episode 4', 'https://youtu.be/OUp7ale49lI?si=Fzwr3QM4NJXKloAt', 18),
+(47, 'Chapter 6: Introduction to Web Design Episode 5', 'https://youtu.be/BN8pC91rJaU?si=PmW8Zn-y9Vu622hY', 18),
+(48, 'Chapter 7: Introduction to Web Design Episode 6', 'https://youtu.be/TDRhwSfxYkg?si=P1_IEfKNf2A-8d5l', 18),
+(49, 'Chapter 8: Introduction to Web Design Episode 7', 'https://youtu.be/UuPt4RpV4Xc?si=oynztxHoe1qju3HJ', 18),
+(50, 'Chapter 9: Introduction to Web Design Episode 8', 'https://youtu.be/kOJ4c5THLQk?si=q1H4BM5nnkJ6T8wR', 18),
+(51, 'Chapter 10: Conclusion to Web Design', 'https://youtu.be/x3Yno9VUYBY?si=fdSIh6F7yOykkaUl', 18),
+(52, 'Chapter 1: Introduction to Professional Web Design', 'https://youtu.be/flAcHu-squc?si=Wa8tfzNlSBdDY95A', 19),
+(53, 'Chapter 2: Professional Web Designer', 'https://youtu.be/8A6MxYNooYA?si=r3zAaz6DIFiQy021', 19),
+(54, 'Chapter 3: Professional Web Designer', 'https://youtu.be/Cn2KgB_01mE?si=1W5ak-eUj2SJ30Xn', 19),
+(55, 'Chapter 4: Professional Web Designer', 'https://youtu.be/ZbQxX7v_dfo?si=lJuKK2plIictBJvt', 19),
+(56, 'Chapter 5: Professional Web Designer', 'https://youtu.be/l5orEmE7Pq8?si=NKvqYBHa_V7Apv_u', 19),
+(57, 'Chapter 6: Professional Web Designer', 'https://youtu.be/lQzmGrUQUDc?si=hK5A3oyXhiYn4eYB', 19),
+(58, 'Chapter 7: Professional Web Designer', 'https://youtu.be/ZliIs7jHi1s?si=YWkFLZR4Gcyb5obU', 19),
+(59, 'Chapter 8: Professional Web Designer', 'https://youtu.be/FYOxoJbngAM?si=JFROT53LfevPzTxQ', 19),
+(60, 'Chapter 9: Professional Web Designer', 'https://youtu.be/fqDTN24HQqg?si=CY0JPbigF-xNS63E', 19),
+(61, 'Chapter 10: Conclusion To Professional Web Designer', 'https://youtu.be/z2t6eRuwbFA?si=IumtdhXMzKMZUIn7', 19),
+(62, 'Chapter 2: Coffee Website in HTML and CSS', 'https://youtu.be/Rol0-FXOsms?si=wi7ESwOQRGwy8M44', 2),
+(63, 'Chapter 3: Coffee Website in HTML and CSS', 'https://youtu.be/ADhiSLUEQas?si=I9RAlV99UA-Dfdyw', 19),
+(64, 'Chapter 4: Coffee Website in HTML and CSS', 'https://youtu.be/tcskp-ncN0I?si=VIPOMePGElrjgows', 2),
+(65, 'Chapter 3: Coffee Website in HTML and CSS in SWD', 'https://youtu.be/ADhiSLUEQas?si=VnM8w42E9DPKPmcl', 2),
+(66, 'Chapter 5: Coffee Website', 'https://youtu.be/Xuso8gekEdg?si=0462zLdSkj9Rv4I6', 2),
+(67, 'Chapter 6: Coffee Website', 'https://youtu.be/SbjpCH0sCqg?si=fChrGPvoVA5tiYrE', 2),
+(68, 'Chapter 7: Responsive Portfolio Website using HTML CSS And JavaScript', 'https://youtu.be/gUxIzo3gj-g?si=vaRa3XCLakxuWaGq', 19),
+(69, 'Chapter 1: Introduction to Special Web Design', 'https://youtu.be/VPml28EBEI8?si=KV1J_ti_Mj6dc5cx', 20),
+(70, 'Chapter 2: How to Create a Simple Website using HTML and CSS', 'https://youtu.be/L9h0pLCtYDo?si=UdJrydYNHzedfgLp', 20),
+(71, 'Chapter 3: Design A Simple Website using HTML CSS', 'https://youtu.be/dOdF_YlQcms?si=8bin8i14_8awVWfS', 20),
+(72, 'Chapter 4: Design A Simple Website using HTML CSS', 'https://youtu.be/SFjN8INg8xI?si=vP0hzmjNyY7NZ3oD', 20),
+(73, 'Chapter 5: Design A Simple Website using HTML CSS', 'https://youtu.be/Ae2nwxun9hw?si=XJSX9hIUV7vXVYR8', 20),
+(74, 'Chapter 6: Design A Simple Website using HTML CSS', 'https://youtu.be/Ca2Goj7Aoc4?si=wX1KdRZ3PEuJGKte', 20),
+(75, 'Chapter 7: Conclusion To SWD', 'https://youtu.be/alW1J24GHK4?si=oyaX1BYpD47V3sIz', 20),
+(83, 'Chapter 1: Introduction to Photoshop', 'https://youtu.be/hD2CPpjQx48?si=prlVTKF_JFtjC4H1', 21),
+(84, 'Chapter 2: Beginner level of Graphic & Web Designer.', 'https://youtu.be/pNg-hYJs_Rw?si=G9CEFMFugzvo8BuP', 21),
+(85, 'Chapter 3: Beginner level of Graphic & Web Designer.', 'https://youtu.be/VsRK80vZuoY?si=o0SoMToOBsLRK0sc', 21),
+(86, 'Chapter 4: Beginner level of Graphic & Web Designer.', 'https://youtu.be/UsNV2Oebz-s?si=rLqUZ1lcYiSkIUzv', 21),
+(87, 'Chapter 5: How to cut hair using color range in photoshop', 'https://youtu.be/rGihBctGb6k?si=7hvYBuCiLIFmkuyk', 21),
+(88, 'Chapter 6: Content Aware Fill Tutorial', 'https://youtu.be/b8u73ALXqvA?si=jbPWheTaU41hJdbg', 21),
+(89, 'How to change the hair color', 'https://youtu.be/Ulmw7SCu6h0?si=Fx-xufvYgMyberZL', 21),
+(90, 'Chapter 8: Learning 3D text design from Photoshop', 'https://youtu.be/O6cpfH_FW64?si=iPHZniVh7ar6CdBf', 21),
+(91, 'Chapter 9: Learning 3D text design from Photoshop', 'https://youtu.be/_vigNaGv3cg?si=7iF3ZVJEqvG0abho', 21),
+(92, 'Chapter 10: Flyer Tutorial with Photoshop - Photoshop ', 'https://youtu.be/3CzUlIskCxU?si=ywhY50wZm1707Cau', 21);
 
 -- --------------------------------------------------------
 
@@ -263,14 +387,14 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `name`, `image`, `description`, `teacher_id`, `created_at`, `updated_at`) VALUES
-(2, 'Special Web Design (SWD) Dec 2024', 'image_677c00aae0c96.jpg', 'Master the art of creating visually stunning, responsive websites with a focus on user experience (UX) and user interface (UI) design. Learn modern web design principles, accessibility, SEO optimization, and trending techniques to build websites that are both functional and aesthetically pleasing across all devices.', 10, '2024-12-29 05:26:40', '2025-01-06 16:11:22'),
-(3, 'Premium UI Design (PUD) Jann 2025', 'image_677c00c5ec8ee.jpg', 'Master advanced UI/UX principles, creating intuitive, user-centered designs. Learn to prototype, conduct user research, and apply modern design tools to build visually appealing, functional, and responsive user interfaces.\r\n\r\n', 8, '2025-01-02 16:04:11', '2025-01-06 16:11:49'),
+(2, 'Special Web Design (SWD) Dec 2024', 'image_677fdfcd70383.jpg', 'Master the art of creating visually stunning, responsive websites with a focus on user experience (UX) and user interface (UI) design. Learn modern web design principles, accessibility, SEO optimization, and trending techniques to build websites that are both functional and aesthetically pleasing across all devices.', 37, '2024-12-29 05:26:40', '2025-01-09 14:40:13'),
+(3, 'Premium UI Design (PUD) Jann 2025', 'image_677c00c5ec8ee.jpg', 'Master advanced UI/UX principles, creating intuitive, user-centered designs. Learn to prototype, conduct user research, and apply modern design tools to build visually appealing, functional, and responsive user interfaces.\n\n', 8, '2025-01-02 16:04:11', '2025-01-09 11:00:02'),
 (5, 'Basic UI/UX Design (BUD) Feb 2025', 'image_677c00d281a7f.jpg', 'Learn the fundamentals of UI/UX design, focusing on user-centered design, wireframing, and prototyping. Understand key principles to create simple, effective interfaces that enhance user experience and usability.', 24, '2025-01-02 16:37:34', '2025-01-06 16:12:02'),
-(8, 'Digital Marketing Strategies	', 'image_677c018861be2.jpg', 'Learn advanced techniques in SEO, SEM, social media marketing, and content strategy for successful campaigns.	', 24, '2025-01-05 15:45:30', '2025-01-06 16:15:04'),
-(12, 'Laravel', 'image_677c01eeb5487.jpg', 'Laravel is a robust PHP framework designed for web development, featuring elegant syntax, MVC architecture, built-in tools, and scalability, enabling efficient coding, seamless routing, database management, and advanced functionality for developers.alidation again', 30, '2025-01-06 14:11:23', '2025-01-06 16:16:46'),
-(13, 'Three.js', 'image_677c036c4e9bf.jpg', 'Three.js is a JavaScript library for creating 3D graphics in web browsers. It simplifies working with WebGL, allowing developers to build interactive 3D scenes, animations, and visualizations efficiently.', 10, '2025-01-06 14:35:13', '2025-01-06 16:23:08'),
-(14, 'WAD', 'image_677c0419b069c.jpg', 'WAD (Web Application Development) builds browser-based applications using technologies like HTML, CSS, and JavaScript.', 15, '2025-01-06 16:26:01', '2025-01-06 16:29:51'),
-(16, 'test edit', 'image_677d562115d35.png', 'ttt edit', 24, '2025-01-07 15:33:58', '2025-01-07 16:28:17');
+(13, 'Three.js', 'image_677fdf9ba974a.jpg', 'Three.js is a JavaScript library for creating 3D graphics in web browsers. It simplifies working with WebGL, allowing developers to build interactive 3D scenes, animations, and visualizations efficiently.', 41, '2025-01-06 14:35:13', '2025-01-09 14:39:23'),
+(18, 'Web Design 101', 'image_677fd0f561ecb.jpg', 'Web Design 101 introduces the fundamentals of creating visually appealing, user-friendly websites. Learn essential design principles, responsive layouts, typography, color theory, and tools to craft engaging online experiences.', 36, '2025-01-09 13:36:53', '2025-01-09 13:36:53'),
+(19, 'Professional Web Design', 'image_677fdfb5a6f58.jpg', 'Professional web design focuses on creating polished, functional websites tailored to client needs. It emphasizes user experience, branding, advanced design techniques, responsive layouts, SEO optimization, and industry-standard tools for seamless results.', 40, '2025-01-09 13:45:47', '2025-01-09 14:39:49'),
+(20, 'Special Web Design (SWD) Jan 2025', 'image_677ff920a8f6a.jpg', 'Special Web Design (SWD) offers cutting-edge, user-centric website solutions tailored for modern businesses. From responsive layouts to interactive interfaces, we prioritize creativity, performance, and seamless user experience to elevate your online presence.', 10, '2025-01-09 14:38:07', '2025-01-09 16:28:16'),
+(21, 'Photoshop', 'image_677ff908be231.png', 'Professional web design focuses on creating polished, functional websites tailored to client needs. It emphasizes user experience, branding, advanced design techniques, responsive layouts, SEO optimization, and industry-standard tools for seamless results.', 38, '2025-01-09 16:25:45', '2025-01-09 16:27:52');
 
 -- --------------------------------------------------------
 
@@ -294,7 +418,9 @@ CREATE TABLE `enrollments` (
 
 INSERT INTO `enrollments` (`id`, `student_id`, `section_id`, `amount`, `status`, `created_at`, `updated_at`) VALUES
 (1, 17, 31, 6445, 'pending', '2025-01-08 09:25:49', '2025-01-08 09:25:49'),
-(2, 17, 17, 350000, 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54');
+(2, 17, 17, 350000, 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54'),
+(3, 7, 1, 0, 'confirmed', '2025-01-08 16:14:47', '2025-01-09 17:13:14'),
+(4, 20, 1, 50000, 'confirmed', '2025-01-09 17:17:54', '2025-01-09 17:19:32');
 
 -- --------------------------------------------------------
 
@@ -320,7 +446,9 @@ CREATE TABLE `payments` (
 
 INSERT INTO `payments` (`id`, `enrollment_id`, `payment_type_id`, `student_id`, `amount`, `evidence_image`, `status`, `created_at`, `updated_at`) VALUES
 (1, 1, 9, 17, 6445.00, 'image_677e449d8e6a5.png', 'pending', '2025-01-08 09:25:49', '2025-01-08 09:25:49'),
-(2, 2, 10, 17, 350000.00, 'image_677e44de3b7f4.png', 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54');
+(2, 2, 10, 17, 350000.00, 'image_677e44de3b7f4.png', 'pending', '2025-01-08 09:26:54', '2025-01-08 09:26:54'),
+(3, 3, 9, 7, 0.00, 'image_677ea477ddbcc.jpg', 'confirmed', '2025-01-08 16:14:47', '2025-01-08 17:27:15'),
+(4, 4, 10, 20, 50000.00, 'image_678004c21384f.png', 'confirmed', '2025-01-09 17:17:54', '2025-01-09 17:19:32');
 
 -- --------------------------------------------------------
 
@@ -341,7 +469,7 @@ CREATE TABLE `payment_types` (
 --
 
 INSERT INTO `payment_types` (`paymenttypeid`, `paymenttypename`, `paymenttypeimage`, `created_at`, `updated_at`) VALUES
-(9, 'Wave Pay', 'image_6773fd2f76aba.png', '2024-12-31 14:18:23', '2025-01-05 16:39:02'),
+(9, 'Wave Pay', 'image_6773fd2f76aba.png', '2024-12-31 14:18:23', '2025-01-08 16:25:05'),
 (10, 'KBZ Pay', 'image_6776862674441.png', '2025-01-01 08:49:46', '2025-01-05 14:34:36'),
 (12, 'PayPal', 'image_677a977d8a9b9.png', '2025-01-05 14:30:21', '2025-01-05 14:30:21');
 
@@ -367,18 +495,10 @@ CREATE TABLE `sections` (
 --
 
 INSERT INTO `sections` (`id`, `name`, `start_date`, `end_date`, `cost`, `course_ids`, `created_at`, `updated_at`) VALUES
-(1, 'BUD Batch 1', '2024-12-10', '2025-06-10', 50000.00, '[5,3]', '2024-12-29 13:09:22', '2025-01-07 09:49:12'),
-(17, 'PUD Batch 1', '2023-12-21', '2025-05-21', 350000.00, '[3,8]', '2025-01-03 05:42:35', '2025-01-07 09:49:26'),
-(23, 'DMS Batch 1', '2025-01-09', '2025-03-09', 85000.00, '[8]', '2025-01-03 14:22:37', '2025-01-07 09:49:30'),
-(24, 'SWD Batch 2', '2024-12-29', '2025-06-29', 450000.00, '[3,13]', '2025-01-03 14:24:52', '2025-01-07 09:49:37'),
-(25, 'SWD Batch 1 edit 2', '2024-12-21', '2025-06-28', 450001.00, '[3,5]', '2025-01-05 17:18:23', '2025-01-07 15:24:23'),
-(26, 'WAD Batch 1', '2025-01-02', '2025-04-06', 250000.00, '[14,8]', '2025-01-06 16:30:25', '2025-01-07 09:49:54'),
-(27, 'WAD Batch 2', '2025-01-09', '2025-06-06', 85000.00, '[12,2]', '2025-01-06 16:32:13', '2025-01-07 09:50:03'),
-(28, 'SWD Batch 3', '2025-01-08', '2025-02-08', 0.00, '[13]', '2025-01-06 16:33:22', '2025-01-07 09:50:09'),
-(29, 'test', '2025-01-03', '2025-01-04', 242.00, '[3]', '2025-01-07 10:11:45', '2025-01-07 10:11:45'),
-(30, 'test77', '2025-01-01', '2025-01-16', 9000.00, '[]', '2025-01-07 15:00:13', '2025-01-07 15:00:13'),
-(31, 'test 55', '2025-01-25', '2025-01-09', 6445.00, '[2,5]', '2025-01-07 15:00:57', '2025-01-07 15:00:57'),
-(32, 'test sd', '2025-01-09', '2025-01-25', 900.00, '[2,8]', '2025-01-07 15:02:42', '2025-01-07 15:02:42');
+(1, 'BUD & PUD Batch 1', '2024-12-10', '2025-06-10', 50000.00, '[3,5]', '2024-12-29 13:09:22', '2025-01-09 14:01:50'),
+(23, 'SWD Batch 1', '2025-01-09', '2025-08-06', 355000.00, '[2,20]', '2025-01-03 14:22:37', '2025-01-09 14:48:24'),
+(33, 'SWD Batch 2', '2025-01-13', '2025-11-19', 450000.00, '[2,20,13]', '2025-01-09 14:52:51', '2025-01-09 14:52:51'),
+(34, 'rfhvgtj', '2025-01-29', '2025-01-03', 85000.00, '[2]', '2025-01-09 18:21:20', '2025-01-09 18:21:20');
 
 -- --------------------------------------------------------
 
@@ -408,7 +528,16 @@ INSERT INTO `students` (`id`, `nrc_id`, `date_of_birth`, `gender`, `phone_number
 (5, '7/MATHANA(N)000622', '2000-02-19', 'male', '09986732457', 'Mandalay', 'kyaw12', '09440226826', 13, '2024-12-28 09:01:40', '2025-01-05 08:26:03'),
 (7, '8/YATHANA(N)385949', '2006-09-04', 'female', '09904689489', 'Myothit, Magway', 'Thet Mon', '09765427586', 17, '2024-12-30 15:42:36', '2025-01-05 08:26:21'),
 (15, '8/THARANA(N)00949', '1998-06-05', 'female', '09442498385', 'No (12), Yan Myo Naing, Magway', 'Kyaw Ko Ko ', '09442498385', 29, '2025-01-05 14:00:32', '2025-01-05 14:00:32'),
-(17, '8/2sfa/341', '2000-02-19', 'male', '09111111111', 'Myanmar, Yangon, Hlaing township no 4 Damayone street', 'sasfda', 'asf', 33, '2025-01-08 05:15:17', '2025-01-08 05:15:17');
+(18, '12/RANAYA(N)238923', '2005-07-26', 'female', '09983421567', 'Rakaing Division, Arm Township', 'Yu Ya', '09983421567', 42, '2025-01-09 10:24:16', '2025-01-09 10:24:16'),
+(19, '7/MADANA(N)119876', '2005-02-01', 'male', '09917498236', 'Mandalay', 'Thet Oo Khin', '09917498236', 43, '2025-01-09 10:26:07', '2025-01-09 10:26:07'),
+(20, '9/TADANA(N)872459', '2005-03-01', 'female', '09451278643', 'Taungdwin Gyi', 'Zaw Shu May', '09451278643', 44, '2025-01-09 10:27:51', '2025-01-09 10:27:51'),
+(21, '8/MATHANA(N)093472', '2007-06-05', 'male', '09674928132', 'Yangon', 'Aung Zin Oo', '09674928132', 45, '2025-01-09 10:30:56', '2025-01-09 10:30:56'),
+(22, '8/MATHANA(N)1666729', '2005-02-09', 'male', '09960125784', 'Minbu', 'Ta Yoke Gyi', '09960125784', 46, '2025-01-09 10:33:05', '2025-01-09 10:33:05'),
+(23, '8/THARANA(N)00886', '2005-03-02', 'male', '09432756849', 'Yangon', 'Aung Thu Rein', '09432756849\n', 47, '2025-01-09 10:35:02', '2025-01-09 10:35:02'),
+(24, '8/MATHANA(N)085321', '2005-07-29', 'female', '09684132567', 'Taungdwin Gyi', 'Theint Nway', '09684132567', 48, '2025-01-09 10:37:15', '2025-01-09 10:37:15'),
+(25, '8/MATHANA(N)762905', '1997-04-04', 'female', '09942789561', 'Yangon', 'Thandar Lynn', '09942789561', 49, '2025-01-09 10:42:41', '2025-01-09 10:42:41'),
+(26, '8/THARANA(N)000634', '2004-09-29', 'female', '09485967123', 'Magway Division, Myothit Township, Myothit', 'Than Than Shwe', '09485967123', 50, '2025-01-09 10:45:59', '2025-01-09 10:45:59'),
+(27, '8/MATHANA(N)098456', '2008-06-10', 'male', '09693425178', 'Yangon', 'Kyaw ZayYar Htun', '09693425178', 51, '2025-01-09 10:49:23', '2025-01-09 10:49:23');
 
 -- --------------------------------------------------------
 
@@ -440,8 +569,21 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`, `u
 (17, 'Thet Thet Mon', 'thetthetmon.mgaway@gmail.com', '$2y$10$iMFZJnLIoUuC7ucu.GnzCOnFHmgvuch8FRpO1hVJ83xRvJNO2b/Ba', 'student', '2024-12-30 15:42:36', '2025-01-03 12:16:01'),
 (24, 'Hein Htet San', 'heinhtetsan@gmail.com', '$2y$10$X5/athrTVuIQncnjZjtE6uwf6piPLnwg1JOZ7.YmkbUFwwu0XJ2Ae', 'teacher', '2025-01-04 02:51:05', '2025-01-04 05:29:16'),
 (29, 'Kyaw Ko Ko ', 'kyawkyaw@gmail.com', '$2y$10$Em8sjj3uH9pGPKB1RopZOeprpOC6JzIe3/iaJ7NkIIFgarvuKEehq', 'student', '2025-01-05 14:00:32', '2025-01-05 14:00:32'),
-(30, 'Htun Kyaw', 'htunkyaw@gmail.com', '$2y$10$uvrnF/QZqSNY8HMDu5FuwurMUytC0rVLHdSQyEzqcNe1S5qt/G0l6', 'teacher', '2025-01-05 17:55:38', '2025-01-05 17:55:38'),
-(33, 'Htun Kyaw 7', 'hk@gmail.com', '$2y$10$Fx0QzN0a9922db.8Ug6iuOKPfAzw41z3Y3qJwQr/EfACeOmqpUPrO', 'student', '2025-01-08 05:15:17', '2025-01-08 05:15:17');
+(36, 'Phyoe Pyae Sone', 'pyaesone@gmail.com', '$2y$10$0ip7GnSzC0q8Hj80b3B2XuPPlu4iDnGWPn5l/m1bkpbS4EjGynVJm', 'teacher', '2025-01-09 10:17:24', '2025-01-09 10:17:24'),
+(37, 'Htin Shar Aung', 'htinsharaung@gmail.com', '$2y$10$EHUAH2jaivxb2FTE7vH3y.MTszgCWbm.gb.a662d7pH1JGLP94d1a', 'teacher', '2025-01-09 10:17:57', '2025-01-09 10:17:57'),
+(38, 'Kyaw Wai Phyoe', 'kyawwaiphyoe@gmail.com', '$2y$10$2zZcCVGmP9aYPI9B9S1hfOlR.beUEgtSLAU1aYeQ7s9PZf76wBXdK', 'teacher', '2025-01-09 10:18:52', '2025-01-09 10:18:52'),
+(40, 'Phoo May Thandar', 'phoomay@gmail.com', '$2y$10$A4SWyHgBE8Nu3krmyR8K2.vHUEWdQnX4II7rsKffhngGX3DTPQg7G', 'teacher', '2025-01-09 10:19:48', '2025-01-09 10:19:48'),
+(41, 'Lwin Min Thant', 'lwinminthant@gmail.com', '$2y$10$XoLJi8DJnxcKz384t5Bw3uIOA5qEtKEW7Ke1DzOMh6FPqHSuS06cu', 'teacher', '2025-01-09 10:20:24', '2025-01-09 10:20:24'),
+(42, 'Hlaing Yuya Aung', 'hlaingyuya986@gmail.com', '$2y$10$1QyzrgmYHYjeyrDv1GBO1uGSnm8gpKISXQbzrWbC5rOE6ouZooh4K', 'student', '2025-01-09 10:24:16', '2025-01-09 10:24:16'),
+(43, 'Thet Oo Khin', 'thetookhin@gmail.com', '$2y$10$u6lUqLiGx1JhwDYbD1KqY.FjwS/PP3jYM/6UewGd7Grug90/SbkSW', 'student', '2025-01-09 10:26:07', '2025-01-09 10:26:07'),
+(44, 'Zaw Shu May', 'zawshumay@gmail.com', '$2y$10$OmuClFTmX2crPJa2BSDMzueb7vMx6AI/7KCQoHxT97GC781dw5nCq', 'student', '2025-01-09 10:27:51', '2025-01-09 10:27:51'),
+(45, 'Aung Zin Oo', 'aungzinoo@gmail.com', '$2y$10$xjcc9Sjs2eV5kMgYQfPAV.POfXSEdl1V6iOk/UGmARdTGvKjdeVI2', 'student', '2025-01-09 10:30:56', '2025-01-09 10:30:56'),
+(46, 'Pyae Sone Hein', 'pyaesonehein267@gmail.com', '$2y$10$vuAmc7bbJcJsxLobEEn6cen62Era1.u46f3r7WALIOWpZ/DiQHlFa', 'student', '2025-01-09 10:33:05', '2025-01-09 10:33:05'),
+(47, 'Aung Thu Rein', 'aungthurein@gmail.com', '$2y$10$wEEw.4/qlm6N41RfH36T4.Hy6098KLWcTQlId0F./IfqlB80DeL.S', 'student', '2025-01-09 10:35:02', '2025-01-09 10:35:02'),
+(48, 'Thein Thein Nway', 'theinttheintnway@gmail.com', '$2y$10$7F2pJqEYC4I5ywfyVUCTvOLLewmTPYtiEy1Zc8tkTSYoKSYrJDf/G', 'student', '2025-01-09 10:37:15', '2025-01-09 10:37:15'),
+(49, 'Thandar Lynn', 'thandarlynn@gmail.com', '$2y$10$mE/kcVN/.WePE9Gadz2wE.Ye21ds.3Ra9QvKLkP/kseLl3d60eBZu', 'student', '2025-01-09 10:42:41', '2025-01-09 10:42:41'),
+(50, 'Than Than Shwe', 'thanshwe@gmail.com', '$2y$10$Qvn/fY/jxBLYK.i6DQkbsuPY488Nb22eLXYTyqa5dPHEuJJxLptga', 'student', '2025-01-09 10:45:59', '2025-01-09 10:45:59'),
+(51, 'Kyaw ZayYar Htun', 'kyawzay@gmail.com', '$2y$10$J72rqqac62g1qLIHdQ3s6eG0Zbyj0Mwu9DeDIsSfShwxgi.lf6OgS', 'student', '2025-01-09 10:49:23', '2025-01-09 10:49:23');
 
 --
 -- Indexes for dumped tables
@@ -511,55 +653,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `access_tokens`
 --
 ALTER TABLE `access_tokens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT for table `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payment_types`
 --
 ALTER TABLE `payment_types`
-  MODIFY `paymenttypeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `paymenttypeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- Constraints for dumped tables
