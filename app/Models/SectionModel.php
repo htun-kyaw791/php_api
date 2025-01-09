@@ -196,4 +196,94 @@ class SectionModel
         return $this->db->select($sql);
     }
 
+    public function getTeacherStudentReport($teacherId)
+    {
+        $sql = "
+            SELECT 
+                s.id AS section_id, 
+                s.name AS section_name,
+                s.cost AS section_cost,
+                u.id AS student_id,
+                u.name AS student_name,
+                u.email AS student_email,
+                c.id AS course_id,
+                c.name AS course_name,
+                c.description AS course_description,
+                ch.id AS chapter_id,
+                ch.name AS chapter_name,
+                ch.link AS chapter_content
+            FROM sections s
+            JOIN enrollments e ON s.id = e.section_id
+            JOIN students st ON e.student_id = st.id
+            JOIN users u ON st.user_id = u.id
+            LEFT JOIN courses c ON JSON_CONTAINS(s.course_ids, JSON_ARRAY(c.id))
+            LEFT JOIN chapters ch ON ch.course_id = c.id
+            WHERE c.teacher_id = :teacher_id
+            AND e.status = 'confirmed'
+            ORDER BY s.id, u.id, c.id, ch.id
+        ";
+
+        $params = [':teacher_id' => $teacherId];
+        $data = $this->db->select($sql, $params);
+        
+
+        // Process the raw data into the desired structure
+        $sections = [];
+        foreach ($data as $row) {
+            $sectionId = $row['section_id'];
+            $studentId = $row['student_id'];
+            $courseId = $row['course_id'];
+            $chapterId = $row['chapter_id'];
+
+            // Initialize section if not already present
+            if (!isset($sections[$sectionId])) {
+                $sections[$sectionId] = [
+                    'id' => $sectionId,
+                    'name' => $row['section_name'],
+                    'students' => []
+                ];
+            }
+
+            // Initialize student if not already present
+            if (!isset($sections[$sectionId]['students'][$studentId])) {
+                $sections[$sectionId]['students'][$studentId] = [
+                    'id' => $studentId,
+                    'name' => $row['student_name'],
+                    'email' => $row['student_email'],
+                    'courses' => []
+                ];
+            }
+
+            // Initialize course if not already present
+            if ($courseId !== null && !isset($sections[$sectionId]['students'][$studentId]['courses'][$courseId])) {
+                $sections[$sectionId]['students'][$studentId]['courses'][$courseId] = [
+                    'id' => $courseId,
+                    'name' => $row['course_name'],
+                    'description' => $row['course_description'],
+                    'chapters' => []
+                ];
+            }
+
+            // Add chapter to course if applicable
+            if ($chapterId !== null) {
+                $sections[$sectionId]['students'][$studentId]['courses'][$courseId]['chapters'][] = [
+                    'id' => $chapterId,
+                    'name' => $row['chapter_name'],
+                    'content' => $row['chapter_content']
+                ];
+            }
+        }
+
+        // Convert associative arrays to indexed arrays
+        foreach ($sections as &$section) {
+            $section['students'] = array_values($section['students']);
+            foreach ($section['students'] as &$student) {
+                $student['courses'] = array_values($student['courses']);
+            }
+        }
+
+        return array_values($sections);
+    }
+
+
 }

@@ -99,4 +99,32 @@ class EnrollmentController extends Controller {
 
         return $this->jsonResponse($response);
     }
+
+    public function getStudentConfirmedSections($request)
+    {
+        $studentId = $request['params'][0];
+        
+        $result = $this->enrollmentModel->getStudentConfirmedSections($studentId);
+        if ($result) {
+            $response = ResponseHelper::success($result, 'Data fetch successfully', 200);
+        } else {
+            $response = ResponseHelper::error('Failed to delete data', 500);
+        }
+
+        return $this->jsonResponse($response);
+    }
+
+    public function getStudentEnrollmentStatus($request){
+        $studentId = $request['params'][0];
+        
+        $result = $this->enrollmentModel->getStudentEnrollmentStatus($studentId);
+        if ($result) {
+            $response = ResponseHelper::success($result, 'Data fetch successfully', 200);
+        } else {
+            $response = ResponseHelper::error('Failed to fetch data', 500);
+        }
+
+        return $this->jsonResponse($response);
+    }
+
 }

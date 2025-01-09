@@ -252,6 +252,22 @@ $router->add('GET', '/api/admin-dashboard', 'DashboardController@getAdminDashboa
 
 $router->add('GET', '/api/teacher-with-courses', 'UserController@getTeacherWithCourses');
 
+$router->add('GET', '/api/student/{id}/confirmed-sections', 'EnrollmentController@getStudentConfirmedSections',
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize('student')
+]);
+$router->add('GET', '/api/student/{id}/enrollment-status', 'EnrollmentController@getStudentEnrollmentStatus',
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize( 'student')
+]);
+
+$router->add('GET', '/api/teacher-student-report/{id}', 'SectionController@getTeacherStudentReport',
+[
+    AuthMiddleware::authenticate(function($request) { return $request; }),
+    AuthMiddleware::authorize( 'teacher')
+]);
 
 
 // Allow from all origins

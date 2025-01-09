@@ -119,5 +119,18 @@ class SectionController extends Controller
 
         return $this->jsonResponse($response);
     }
+
+    public function getTeacherStudentReport($request){
+        $teacher_id = $request['params'][0];
+        
+        $result = $this->sectionModel->getTeacherStudentReport($teacher_id);
+        if ($result) {
+            $response = ResponseHelper::success($result, 'Data fetch successfully', 200);
+        } else {
+            $response = ResponseHelper::error('Failed to fetch data', 500);
+        }
+
+        return $this->jsonResponse($response);
+    }
 }
     
